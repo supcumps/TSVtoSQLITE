@@ -248,13 +248,7 @@ End
 		  Var rs As RowSet
 		  
 		  If dbFile.Exists Then
-		    
 		    Try
-		      db.Connect
-		      'db.WriteAheadLogging = True
-		      MessageBox("Connected to database.")
-		      // populate the lisbox
-		      
 		      rs = db.SelectSQL("SELECT * FROM Leap")
 		      
 		      // populate the listbox
@@ -262,72 +256,8 @@ End
 		    Catch error As DatabaseException
 		      MessageBox("Connection error: " + error.Message)
 		    End Try
-		  Else
 		    
-		    
-		    //======================================
-		    Var f As  New FolderItem 
-		    f = SpecialFolder.Documents.Child("!!CLCArchives").Child("AllMatters.tsv")
-		    'f = FolderItem.ShowOpenFileDialog("text/plain")
-		    
-		    Try 
-		      Var fileData As String
-		      Var tis As TextInputStream
-		      
-		      tis = TextInputStream.Open(f)
-		      tis.Encoding = Encodings.UTF8
-		      fileData = tis.ReadAll
-		      tis.Close
-		      
-		      Var records()As String
-		      'Var fields() As String
-		      
-		      records = fileData.Split(EndOfLine)
-		      
-		      // the first line contains the header record
-		      Var firstLine As String =  records(0)
-		      
-		      //
-		      // remove spaces and periods from firstLine
-		      //1.
-		      firstLine = firstLine.ReplaceAll( ".", "" )
-		      //2.
-		      firstLine = firstLine.ReplaceAll( "Matter", "" )
-		      //3.
-		      firstLine = firstLine.ReplaceAll( " ", "" )
-		      //4.  use regex to replace tabs with a ","
-		      
-		      Var re As New RegEx
-		      re.SearchPattern = "\t"
-		      re.ReplacementPattern = ","
-		      re.Options.ReplaceAllMatches = True
-		      firstLine = re.Replace(firstLine)
-		      
-		      
-		      // now create the database and add data to records
-		      
-		      'Var db As SQLiteDatabase = dbConnect(firstLine)
-		      db  = dbConnect(firstLine)
-		      
-		      addData(db,records(),firstLine)
-		      
-		      // populate the lisbox
-		      
-		      'rs = db.SelectSQL("SELECT * FROM Leap")
-		      '
-		      '// populate the listbox
-		      'PopulateListBox(listMembers, rs)
-		      
-		    Catch error As IOException
-		      MessageBox("Error: unable to open the data file.")
-		    End Try
-		    
-		  End If
-		  
-		  
-		  
-		  
-		  
+		  End If 
 		  
 		End Sub
 	#tag EndEvent
@@ -480,12 +410,17 @@ End
 		  If Me.SelectedRowIndex >= 0 Then
 		    'MessageBox(Me.CellTextAt(Me.SelectedRowIndex, 0))
 		    Var item As String = Me.CellTextAt(Me.SelectedRowIndex, 1)
+		    Var name As String = Me.CellTextAt(Me.SelectedRowIndex, 2)
+		    name = name.ReplaceAll( " ", "," )
+		    item = item + "_" + name.LastField(",")
 		    
 		    f  = SpecialFolder.Documents.child("!!CLCArchives").Child(item)
+		    
 		    If f <> Nil And f.Exists Then
 		      f.launch
 		    Else
-		      MessageBox("Folder not found")
+		      MessageBox(f.NativePath + " Folder not found")
+		      g = FolderItem.ShowSelectFolderDialog 
 		    End If
 		    
 		  End If

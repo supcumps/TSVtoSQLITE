@@ -6,13 +6,21 @@ Inherits DesktopApplication
 		  'Var db As New SQLiteDatabase
 		  
 		  dbFile =SpecialFolder.Documents.Child("!!CLCArchives").Child("LeapDATA.sqlite")
+		  db = New SQLiteDatabase
+		  db.DatabaseFile = dbfile
+		  
+		  // uncomment to test creation of database
+		  'If dbFile.Exists Then
+		  'dbfile.Remove
+		  'End If
+		  
+		  
 		  If dbFile.Exists Then
-		    db = New SQLiteDatabase
-		    db.DatabaseFile = dbfile
+		    
 		    Try
 		      db.Connect
 		      'db.WriteAheadLogging = True
-		      MessageBox("Connected to database.")
+		      'MessageBox("Connected to database from app opening")
 		      
 		    Catch error As DatabaseException
 		      MessageBox("Connection error: " + error.Message)
@@ -23,8 +31,8 @@ Inherits DesktopApplication
 		    f = SpecialFolder.Documents.Child("!!CLCArchives").Child("AllMatters.tsv")
 		    'f = FolderItem.ShowOpenFileDialog("text/plain")
 		    Try 
-		      db = New SQLiteDatabase
-		      db.DatabaseFile = dbfile
+		      'db = New SQLiteDatabase
+		      'db.DatabaseFile = dbfile
 		      
 		      Var fileData As String
 		      Var tis As TextInputStream
@@ -64,9 +72,9 @@ Inherits DesktopApplication
 		      
 		      'Var db As SQLiteDatabase = dbConnect(firstLine)
 		      db  = dbConnect(firstLine )
-		      
+		      'MessageBox("Database created.")
 		      addData(db,records(),firstLine)
-		      
+		      'MessageBox("Data added to table.")
 		      // populate the lisbox
 		      Var rs As RowSet
 		      rs = db.SelectSQL("SELECT * FROM Leap")
