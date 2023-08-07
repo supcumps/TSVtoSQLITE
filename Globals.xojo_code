@@ -8,6 +8,10 @@ Protected Module Globals
 		dbFile As FolderItem
 	#tag EndProperty
 
+	#tag Property, Flags = &h0
+		listBoxHeader As String
+	#tag EndProperty
+
 
 	#tag ViewBehavior
 		#tag ViewProperty
@@ -47,14 +51,6 @@ Protected Module Globals
 			Visible=true
 			Group="Position"
 			InitialValue="0"
-			Type="Integer"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="db"
-			Visible=false
-			Group="Behavior"
-			InitialValue=""
 			Type="Integer"
 			EditorType=""
 		#tag EndViewProperty

@@ -252,6 +252,14 @@ End
 		      rs = db.SelectSQL("SELECT * FROM Leap")
 		      
 		      // populate the listbox
+		      Var columns As RowSet = db.TableColumns("Leap")
+		      Var columNames As String = ""
+		      For Each c As DatabaseRow In columns
+		        columNames  = columNames +  c.Column("ColumnName").StringValue +  Chr(9)
+		      Next
+		      
+		      listMembers.HeaderAt(listMembers.AllColumns) = columNames
+		      
 		      PopulateListBox(listMembers, rs)
 		    Catch error As DatabaseException
 		      MessageBox("Connection error: " + error.Message)
@@ -265,91 +273,91 @@ End
 
 	#tag Method, Flags = &h0
 		Sub addData(db as SQLiteDatabase, records() as string, firstLine as String)
-		  
-		  
-		  Var re As New RegEx
-		  re.SearchPattern = "\t"
-		  re.ReplacementPattern = "','"
-		  re.Options.ReplaceAllMatches = True
-		  
-		  
-		  Try
-		    db.Connect
-		    
-		  Catch error As DatabaseException
-		    // handle error here
-		  End Try
-		  
-		  
-		  
-		  Var SQL As String = ""
-		  Var columns As String = ""
-		  
-		  For x As Integer = 1 To records.count -1 // number of rows less the header
-		    
-		    
-		    sql = "INSERT INTO Leap ("+ firstline + ") VALUES ("
-		    
-		    columns = records(x)
-		    // remove any addiitonal apostrophe's
-		    columns = columns.ReplaceAll("'","")
-		    // now parse that toreplace tabs with commas
-		    columns = re.Replace(columns)
-		    
-		    columns = "'"+ columns +"'" /// error --splits dolalr amounts
-		    
-		    
-		    sql = sql + columns + "); " 
-		    
-		    db.ExecuteSQL(sql )
-		    
-		  Next
-		  /////////
-		  
-		  
-		  
+		  '
+		  '
+		  'Var re As New RegEx
+		  're.SearchPattern = "\t"
+		  're.ReplacementPattern = "','"
+		  're.Options.ReplaceAllMatches = True
+		  '
+		  '
+		  'Try
+		  'db.Connect
+		  '
+		  'Catch error As DatabaseException
+		  '// handle error here
+		  'End Try
+		  '
+		  '
+		  '
+		  'Var SQL As String = ""
+		  'Var columns As String = ""
+		  '
+		  'For x As Integer = 1 To records.count -1 // number of rows less the header
+		  '
+		  '
+		  'sql = "INSERT INTO Leap ("+ firstline + ") VALUES ("
+		  '
+		  'columns = records(x)
+		  '// remove any addiitonal apostrophe's
+		  'columns = columns.ReplaceAll("'","")
+		  '// now parse that toreplace tabs with commas
+		  'columns = re.Replace(columns)
+		  '
+		  'columns = "'"+ columns +"'" /// error --splits dolalr amounts
+		  '
+		  '
+		  'sql = sql + columns + "); " 
+		  '
+		  'db.ExecuteSQL(sql )
+		  '
+		  'Next
+		  '/////////
+		  '
+		  '
+		  '
 		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Function dbConnect(firstLine as string) As SQLiteDatabase
-		  'Var db As SQLiteDatabase
-		  'Var dbFile As FolderItem
+		  ''Var db As SQLiteDatabase
+		  ''Var dbFile As FolderItem
+		  ''
+		  ''dbFile = New FolderItem("LeapDATA.sqlite")
 		  '
-		  'dbFile = New FolderItem("LeapDATA.sqlite")
-		  
+		  ''
+		  ''db = New SQLiteDatabase
+		  ''db.DatabaseFile = dbFile
 		  '
-		  'db = New SQLiteDatabase
-		  'db.DatabaseFile = dbFile
-		  
-		  Var headings() As String = firstLine.Split(",")
-		  
-		  
-		  Try
-		    db.CreateDatabase
-		    db.Connect
-		    Var SQL As String
-		    sql = "CREATE TABLE Leap (ID INTEGER PRIMARY KEY AUTOINCREMENT"
-		    For Each rec As String In headings
-		      SQL = SQL + "," + rec + " TEXT"
-		    Next
-		    SQL = SQL +");" 
-		    
-		    'MessageBox(sql)
-		    
-		    db.ExecuteSQL(SQL)
-		    Return db
-		    
-		  Catch error As IOException
-		    MessageBox("The database could not be created: " + error.Message)
-		  Catch error As DatabaseException
-		    MessageBox("Database error: " + error.Message)
-		  End Try
-		  
-		  
-		  
-		  
+		  'Var headings() As String = firstLine.Split(",")
+		  '
+		  '
+		  'Try
+		  'db.CreateDatabase
+		  'db.Connect
+		  'Var SQL As String
+		  'sql = "CREATE TABLE Leap (ID INTEGER PRIMARY KEY AUTOINCREMENT"
+		  'For Each rec As String In headings
+		  'SQL = SQL + "," + rec + " TEXT"
+		  'Next
+		  'SQL = SQL +");" 
+		  '
+		  ''MessageBox(sql)
+		  '
+		  'db.ExecuteSQL(SQL)
+		  'Return db
+		  '
+		  'Catch error As IOException
+		  'MessageBox("The database could not be created: " + error.Message)
+		  'Catch error As DatabaseException
+		  'MessageBox("Database error: " + error.Message)
+		  'End Try
+		  '
+		  '
+		  '
+		  '
 		  
 		End Function
 	#tag EndMethod
@@ -420,7 +428,7 @@ End
 		      f.launch
 		    Else
 		      MessageBox(f.NativePath + " Folder not found")
-		      g = FolderItem.ShowSelectFolderDialog 
+		      f = FolderItem.ShowSelectFolderDialog 
 		    End If
 		    
 		  End If

@@ -79,8 +79,6 @@ Inherits DesktopApplication
 		      Var rs As RowSet
 		      rs = db.SelectSQL("SELECT * FROM Leap")
 		      
-		      // populate the listbox
-		      'PopulateListBox(listMembers, rs)
 		      
 		    Catch error As IOException
 		      MessageBox("Error: unable to open the data file.")
@@ -127,7 +125,7 @@ Inherits DesktopApplication
 		  Var SQL As String = ""
 		  Var columns As String = ""
 		  
-		  For x As Integer = 1 To records.count -1 // number of rows less the header
+		  For x As Integer = 1 To records.count -1 // number of rows excluding  the header
 		    
 		    
 		    sql = "INSERT INTO Leap ("+ firstline + ") VALUES ("
