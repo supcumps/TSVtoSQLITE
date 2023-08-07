@@ -1,0 +1,18 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=csvFiletype
+		Extension=csv
+		Flags=&h9
+		MacCreator=
+		MacType=
+		Name=csvFiletype
+		UTI=
+		UTIConformsTo=, public.data
+		Description=comma seperated values
+		MimeType=utf8
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet
