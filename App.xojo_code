@@ -10,9 +10,9 @@ Inherits DesktopApplication
 		  db.DatabaseFile = dbfile
 		  
 		  // uncomment to test creation of database
-		  'If dbFile.Exists Then
-		  'dbfile.Remove
-		  'End If
+		  If dbFile.Exists Then
+		    dbfile.Remove
+		  End If
 		  
 		  
 		  If dbFile.Exists Then
@@ -28,7 +28,7 @@ Inherits DesktopApplication
 		  Else
 		    //======================================
 		    Var f As  New FolderItem 
-		    f = SpecialFolder.Documents.Child("!!CLCArchives").Child("AllMatters.tsv")
+		    f = SpecialFolder.Documents.Child("LeapData").Child("MatterList2.tsv")
 		    'f = FolderItem.ShowOpenFileDialog("text/plain")
 		    Try 
 		      'db = New SQLiteDatabase

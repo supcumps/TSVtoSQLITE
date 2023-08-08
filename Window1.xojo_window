@@ -121,7 +121,7 @@ Begin DesktopWindow Window1
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
-      LockRight       =   False
+      LockRight       =   True
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   0
@@ -183,7 +183,7 @@ Begin DesktopWindow Window1
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
-      Height          =   20
+      Height          =   22
       Index           =   -2147483648
       Italic          =   False
       Left            =   20
@@ -202,11 +202,11 @@ Begin DesktopWindow Window1
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   22
+      Top             =   20
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   233
+      Width           =   47
    End
    Begin DesktopButton DeleteRow
       AllowAutoDeactivate=   True
@@ -238,6 +238,37 @@ Begin DesktopWindow Window1
       Underline       =   False
       Visible         =   False
       Width           =   106
+   End
+   Begin DesktopButton clearButton
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Clear Search"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   483
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      TabIndex        =   6
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   20
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   97
    End
 End
 #tag EndDesktopWindow
@@ -515,7 +546,7 @@ End
 		  Var sql As String = "SELECT * FROM Leap "
 		  
 		  If NameField.Text <> "" Then   // create the WHERE clause to isolate records matching the search field
-		    sql = sql + "WHERE LOWER(NUMBER) LIKE LOWER('%" + SQLify(NameField.Text) + "%') "
+		    sql = sql + "WHERE LOWER(No) LIKE LOWER('%" + SQLify(NameField.Text) + "%') "
 		    sql = sql + "OR LOWER(CLIENT) LIKE LOWER('%" + SQLify(NameField.Text) + "%') "
 		    
 		  Else
@@ -536,6 +567,13 @@ End
 		End Function
 	#tag EndEvent
 #tag EndEvents
+#tag Events NameField
+	#tag Event
+		Sub FocusLost()
+		  B_SearchButton.SetFocus
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events DeleteRow
 	#tag Event
 		Sub Pressed()
@@ -546,6 +584,14 @@ End
 		  End If
 		  
 		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events clearButton
+	#tag Event
+		Sub Pressed()
+		  NameField.Text = ""
+		  B_SearchButton.Press
 		End Sub
 	#tag EndEvent
 #tag EndEvents
