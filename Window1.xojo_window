@@ -117,11 +117,11 @@ Begin DesktopWindow Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   371
+      Left            =   373
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
-      LockRight       =   True
+      LockRight       =   False
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   0
@@ -252,11 +252,11 @@ Begin DesktopWindow Window1
       Height          =   20
       Index           =   -2147483648
       Italic          =   False
-      Left            =   483
+      Left            =   485
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
-      LockRight       =   True
+      LockRight       =   False
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   0
@@ -264,7 +264,7 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   20
+      Top             =   22
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -419,6 +419,35 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub resetSearch()
+		  Var rs As rowset
+		  
+		  
+		  Var sql As String = "SELECT * FROM Leap "
+		  
+		  If NameField.Text <> "" Then   // create the WHERE clause to isolate records matching the search field
+		    sql = sql + "WHERE LOWER(No) LIKE LOWER('%" + SQLify(NameField.Text) + "%') "
+		    sql = sql + "OR LOWER(CLIENT) LIKE LOWER('%" + SQLify(NameField.Text) + "%') "
+		    
+		  Else
+		    
+		  End If
+		  sql = sql + "ORDER BY CLIENT DESC "
+		  
+		  
+		  rs = db.SelectSQL(SQL)
+		  If rs <> Nil Then
+		    // populate the listbox
+		    PopulateListBox(listMembers, rs)
+		  Else
+		    MessageBox("Unable to populate search box")
+		    
+		  End If
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function SQLify(Source As String) As String
 		  Var result As String
 		  result = ReplaceAll(Source,"'","''")
@@ -515,14 +544,19 @@ End
 		  // Check if a row is selected in the Listbox
 		  If Me.SelectedRowIndex >= 0 Then
 		    'MessageBox(Me.CellTextAt(Me.SelectedRowIndex, 0))
-		    Var item As String = Me.CellTextAt(Me.SelectedRowIndex, 1)
+		    Var item As String = Me.CellTextAt(Me.SelectedRowIndex, 1) // the number of the matter
 		    Var name As String = Me.CellTextAt(Me.SelectedRowIndex, 2)
-		    name = name.ReplaceAll( " ", "," )
-		    item = item + "_" + name.LastField(",")
+		    'name = name.ReplaceAll( " ", "," )
+		    'item = item + "_" + name.LastField(",")
+		    
+		    //========================
+		    // need to be able to find the file by its number only
+		    //========================
 		    
 		    f  = SpecialFolder.Documents.child("LeapData").Child(item)
 		    
 		    If f <> Nil And f.Exists Then
+		      messagebox("Locating " + name)
 		      f.launch
 		    Else
 		      MessageBox(f.NativePath + " Folder not found")
@@ -540,30 +574,7 @@ End
 #tag Events B_SearchButton
 	#tag Event
 		Function MouseDown(x As Integer, y As Integer) As Boolean
-		  Var rs As rowset
-		  
-		  
-		  Var sql As String = "SELECT * FROM Leap "
-		  
-		  If NameField.Text <> "" Then   // create the WHERE clause to isolate records matching the search field
-		    sql = sql + "WHERE LOWER(No) LIKE LOWER('%" + SQLify(NameField.Text) + "%') "
-		    sql = sql + "OR LOWER(CLIENT) LIKE LOWER('%" + SQLify(NameField.Text) + "%') "
-		    
-		  Else
-		    
-		  End If
-		  sql = sql + "ORDER BY CLIENT DESC "
-		  
-		  
-		  rs = db.SelectSQL(SQL)
-		  If rs <> Nil Then
-		    // populate the listbox
-		    PopulateListBox(listMembers, rs)
-		  Else
-		    MessageBox("Unable to populate search box")
-		    
-		  End If
-		  
+		  resetSearch()
 		End Function
 	#tag EndEvent
 #tag EndEvents
@@ -589,10 +600,11 @@ End
 #tag EndEvents
 #tag Events clearButton
 	#tag Event
-		Sub Pressed()
+		Function MouseDown(x As Integer, y As Integer) As Boolean
 		  NameField.Text = ""
-		  B_SearchButton.Press
-		End Sub
+		  B_SearchButton.SetFocus
+		  resetSearch()
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior

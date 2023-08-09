@@ -66,18 +66,17 @@ Inherits DesktopApplication
 		      re.Options.ReplaceAllMatches = True
 		      firstLine = re.Replace(firstLine)
 		      
-		      'message
+		      
 		      
 		      // now create the database and add data to records
+		      
 		      
 		      'Var db As SQLiteDatabase = dbConnect(firstLine)
 		      db  = dbConnect(firstLine )
 		      'MessageBox("Database created.")
 		      addData(db,records(),firstLine)
 		      'MessageBox("Data added to table.")
-		      // populate the lisbox
-		      Var rs As RowSet
-		      rs = db.SelectSQL("SELECT * FROM Leap")
+		      
 		      
 		      
 		    Catch error As IOException
@@ -129,10 +128,19 @@ Inherits DesktopApplication
 		    columns = records(x)
 		    // remove any addiitonal apostrophe's
 		    columns = columns.ReplaceAll("'","")
-		    // now parse that toreplace tabs with commas
+		    // now parse that to replace tabs with commas
 		    columns = re.Replace(columns)
 		    
-		    columns = "'"+ columns +"'" /// error --splits dolalr amounts
+		    columns = "'"+ columns +"'" ///
+		    
+		    // remove all double "
+		    
+		    Var rx As New RegEx 
+		    rx.SearchPattern = "x*93*"
+		    rx.ReplacementPattern = ""
+		    rx.Options.ReplaceAllMatches = True
+		    firstLine = rx.Replace(firstLine)
+		    ''message
 		    
 		    
 		    sql = sql + columns + "); " 
@@ -187,18 +195,6 @@ Inherits DesktopApplication
 		  
 		  
 		  
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Function FileExists(fileName As String) As Boolean
-		  'Function FileExists(fileName As String) As Boolean
-		  'If File.Exists(fileName) Then
-		  'Return True
-		  'Else
-		  'Return False
-		  'End If
-		  'End Function
 		End Function
 	#tag EndMethod
 
