@@ -28,7 +28,7 @@ Begin DesktopWindow MattersWindow
       AllowAutoDeactivate=   True
       Bold            =   False
       Cancel          =   True
-      Caption         =   "Cancel"
+      Caption         =   "Quit"
       Default         =   False
       Enabled         =   True
       FontName        =   "System"
@@ -1250,6 +1250,26 @@ End
 
 
 	#tag Method, Flags = &h0
+		Sub clearEntryFields()
+		  If Trim(matterNumber.Text) <>"" Then
+		    B_Save.Press 
+		    matterNumber.Text = "" 
+		    clientName.Text = ""
+		    State.Text = "" 
+		    Status.Text = ""
+		    matterType.Text = ""
+		    Credit.Text = "" 
+		    dateField.Text = ""  
+		    Description.Text = "" 
+		     staffActing.Text = "" 
+		    staffAssisting.Text = "" 
+		    staffResponsible.Text = "" 
+		  End If
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub PopulateListBox(dataList As DesktopListbox, rowsFound As RowSet)
 		  'Sub PopulateListBox(dataList As DesktopListbox, rs As RowSet)
 		  
@@ -1477,9 +1497,10 @@ End
 #tag EndEvents
 #tag Events B_SearchButton
 	#tag Event
-		Function MouseDown(x As Integer, y As Integer) As Boolean
+		Sub Pressed()
+		  newRow = False
 		  resetSearch()
-		End Function
+		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events DeleteRow
@@ -1487,17 +1508,16 @@ End
 		Sub Pressed()
 		  If MattersWindow.ListMembers. SelectedRowCount = 1 Then
 		    
-		    Var ID As Integer = ListMembers.SelectedRowIndex
 		    Try
-		      db.ExecuteSQL(" DELETE FROM Leap WHERE ID = ?", ID.ToString) 
-		      listmembers.RemoveRowAt(ID)
-		      
-		    Catch errr As DatabaseException
-		      MessageBox("The record was not deleted due to an error.")
+		      CurrentRow.RemoveRow
+		    Catch error As DatabaseException
+		      MessageBox ("The Matter record was not deleted due to an error.")
 		    End Try
+		    
 		  End If
 		  
-		  
+		  resetSearch()
+		  // need to remove the folferitem as well/???
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1520,7 +1540,12 @@ End
 #tag Events ADDRow
 	#tag Event
 		Sub Pressed()
+		  newRow = True
 		  
+		  clearEntryFields()
+		   
+		  // clear fields
+		  //make save button active (? change colour)
 		  
 		  
 		End Sub
@@ -1530,21 +1555,40 @@ End
 	#tag Event
 		Sub Pressed()
 		  Try
-		    currentRow.EditRow
-		    
-		    CurrentRow.Column("No").StringValue = matterNumber.Text 
-		    CurrentRow.Column("Client").StringValue = clientName.Text
-		    CurrentRow.Column("State").StringValue = State.Text 
-		    CurrentRow.Column("Status").StringValue = Status.Text
-		    matterType.Text = CurrentRow.Column("Type").StringValue
-		    CurrentRow.Column("Credit").StringValue = Credit.Text
-		    CurrentRow.Column("InstructionDate").StringValue = dateField.Text  
-		    CurrentRow.Column("Description").StringValue = Description.Text 
-		    CurrentRow.Column("StaffAct").StringValue = staffActing.Text 
-		    CurrentRow.Column("StaffAssist").StringValue = staffAssisting.Text 
-		    CurrentRow.Column("StaffResp").StringValue = staffResponsible.Text 
-		    
-		    currentRow.SaveRow
+		    If newRow Then
+		      Var row As New DatabaseRow
+		      
+		      row.Column("No").StringValue = matterNumber.Text 
+		      row.Column("Client").StringValue = clientName.Text
+		      row.Column("State").StringValue = State.Text 
+		      row.Column("Status").StringValue = Status.Text
+		      row.Column("Type").StringValue = matterType.Text
+		      row.Column("Credit").StringValue = Credit.Text
+		      row.Column("InstructionDate").StringValue = dateField.Text  
+		      row.Column("Description").StringValue = Description.Text 
+		      row.Column("StaffAct").StringValue = staffActing.Text 
+		      row.Column("StaffAssist").StringValue = staffAssisting.Text 
+		      row.Column("StaffResp").StringValue = staffResponsible.Text 
+		      db.AddRow("Leap", row)
+		      newRow = False
+		    Else
+		      
+		      currentRow.EditRow
+		      
+		      CurrentRow.Column("No").StringValue = matterNumber.Text 
+		      CurrentRow.Column("Client").StringValue = clientName.Text
+		      CurrentRow.Column("State").StringValue = State.Text 
+		      CurrentRow.Column("Status").StringValue = Status.Text
+		       CurrentRow.Column("Type").StringValue = matterType.Text
+		      CurrentRow.Column("Credit").StringValue = Credit.Text
+		      CurrentRow.Column("InstructionDate").StringValue = dateField.Text  
+		      CurrentRow.Column("Description").StringValue = Description.Text 
+		      CurrentRow.Column("StaffAct").StringValue = staffActing.Text 
+		      CurrentRow.Column("StaffAssist").StringValue = staffAssisting.Text 
+		      CurrentRow.Column("StaffResp").StringValue = staffResponsible.Text 
+		      
+		      currentRow.SaveRow
+		    End If
 		  Catch error As DatabaseException
 		    MessageBox ("The matter details could not be saved due to an error.")
 		  End Try
