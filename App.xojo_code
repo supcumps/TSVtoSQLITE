@@ -10,9 +10,14 @@ Inherits DesktopApplication
 		  db.DatabaseFile = dbfile
 		  
 		  // uncomment to test creation of database
-		  If dbFile.Exists Then
-		    dbfile.Remove
-		  End If
+		  'If dbFile.Exists Then
+		  'Try
+		  'dbfile.Remove
+		  'Catch e As DatabaseException
+		  'MessageBox("Unable to remove existing database " + e.Message)
+		  'End Try
+		  '
+		  'End If
 		  
 		  
 		  If dbFile.Exists Then
@@ -27,62 +32,12 @@ Inherits DesktopApplication
 		    End Try
 		  Else
 		    //======================================
+		    
 		    Var f As  New FolderItem 
 		    f = SpecialFolder.Documents.Child("LeapData").Child("MatterList2.tsv")
 		    'f = FolderItem.ShowOpenFileDialog("text/plain")
-		    Try 
-		      'db = New SQLiteDatabase
-		      'db.DatabaseFile = dbfile
-		      
-		      Var fileData As String
-		      Var tis As TextInputStream
-		      
-		      tis = TextInputStream.Open(f)
-		      tis.Encoding = Encodings.UTF8
-		      fileData = tis.ReadAll
-		      tis.Close
-		      
-		      Var records()As String
-		      'Var fields() As String
-		      
-		      records = fileData.Split(EndOfLine)
-		      
-		      // the first line contains the header record
-		      Var firstLine As String =  records(0)
-		      
-		      //
-		      // remove spaces and periods from firstLine
-		      //1.
-		      firstLine = firstLine.ReplaceAll( ".", "" )
-		      //2.
-		      firstLine = firstLine.ReplaceAll( "Matter", "" )
-		      //3.
-		      firstLine = firstLine.ReplaceAll( " ", "" )
-		      //4.  use regex to replace tabs with a ","
-		      
-		      Var re As New RegEx
-		      re.SearchPattern = "\t"
-		      re.ReplacementPattern = ","
-		      re.Options.ReplaceAllMatches = True
-		      firstLine = re.Replace(firstLine)
-		      
-		      
-		      
-		      // now create the database and add data to records
-		      
-		      
-		      'Var db As SQLiteDatabase = dbConnect(firstLine)
-		      db  = dbConnect(firstLine )
-		      'MessageBox("Database created.")
-		      addData(db,records(),firstLine)
-		      'MessageBox("Data added to table.")
-		      
-		      
-		      
-		    Catch error As IOException
-		      MessageBox("Error: unable to open the data file.")
-		    End Try
 		    
+		    makeDatabase(f)
 		    
 		  End If
 		  
@@ -90,12 +45,93 @@ Inherits DesktopApplication
 		  
 		  
 		  Var w As New DesktopWindow 
-		  w.Show(WIndow1)
+		  w.Show(mattersWIndow)
 		  
 		  
 		  
 		End Sub
 	#tag EndEvent
+
+
+	#tag MenuHandler
+		Function WindowMainWIndow() As Boolean Handles WindowMainWIndow.Action
+		  
+		  
+		  Var w As desktopWindow
+		  w = getFrontWindow()
+		  w.Restore
+		  
+		  w.restore
+		  Return True
+		  
+		End Function
+	#tag EndMenuHandler
+
+	#tag MenuHandler
+		Function WindowMinimize() As Boolean Handles WindowMinimize.Action
+		  Var w As desktopWindow
+		  w = getFrontWindow()
+		  w.Minimize
+		  Return True
+		  
+		  
+		End Function
+	#tag EndMenuHandler
+
+	#tag MenuHandler
+		Function WindowTileLeft() As Boolean Handles WindowTileLeft.Action
+		  // move window to left of screen
+		  Var w As desktopWindow
+		  
+		  w = getFrontWindow()
+		  
+		  Var myBounds As New Rect 
+		  myBounds.Left = 0
+		  myBounds.Top = w.top
+		  myBounds.Height = w.Height 
+		  myBounds.Width = w.Width
+		  w.Bounds = myBounds
+		  Return True
+		  
+		  
+		End Function
+	#tag EndMenuHandler
+
+	#tag MenuHandler
+		Function WindowTileRight() As Boolean Handles WindowTileRight.Action
+		  
+		  // move window to Right  of screen
+		  Var w As desktopWindow
+		  
+		  w = getFrontWindow()
+		  
+		  Var myBounds As New Rect 
+		  myBounds.Left = Screen.ScreenAt(0).AvailableWidth - w.Width
+		  myBounds.Top = w.top
+		  myBounds.Height = w.Height 
+		  myBounds.Width = w.Width
+		  w.Bounds = myBounds
+		  Return True
+		  
+		  
+		End Function
+	#tag EndMenuHandler
+
+	#tag MenuHandler
+		Function WindowZoom() As Boolean Handles WindowZoom.Action
+		  
+		  Var w As desktopWindow
+		  
+		  w = getFrontWindow()
+		  windowHandle = w.Handle
+		  w.Maximize() 
+		  Return True
+		  
+		  
+		  
+		  
+		End Function
+	#tag EndMenuHandler
 
 
 	#tag Method, Flags = &h0
@@ -198,6 +234,83 @@ Inherits DesktopApplication
 		End Function
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Function getFrontWindow() As desktopWindow
+		  'Public Function getFrontWindow() As Window
+		  Var frontmostWindow As desktopWindow
+		  For i As Integer = 0 To App.WindowCount
+		    Var w As desktopWindow = app.Window(i)
+		    If (w <> Nil) And  w.Visible Then
+		      frontmostWindow = w
+		      Exit
+		    End If
+		  Next
+		  Return frontmostWindow
+		  'End Function
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub makeDatabase(f as folderItem)
+		  
+		  Try 
+		    'db = New SQLiteDatabase
+		    'db.DatabaseFile = dbfile
+		    
+		    Var fileData As String
+		    Var tis As TextInputStream
+		    
+		    tis = TextInputStream.Open(f)
+		    tis.Encoding = Encodings.UTF8
+		    fileData = tis.ReadAll
+		    tis.Close
+		    
+		    Var records()As String
+		    'Var fields() As String
+		    
+		    records = fileData.Split(EndOfLine)
+		    
+		    // the first line contains the header record
+		    Var firstLine As String =  records(0)
+		    
+		    //
+		    // remove spaces and periods from firstLine
+		    //1.
+		    firstLine = firstLine.ReplaceAll( ".", "" )
+		    //2.
+		    firstLine = firstLine.ReplaceAll( "Matter", "" )
+		    //3.
+		    firstLine = firstLine.ReplaceAll( " ", "" )
+		    //4.  use regex to replace tabs with a ","
+		    
+		    Var re As New RegEx
+		    re.SearchPattern = "\t"
+		    re.ReplacementPattern = ","
+		    re.Options.ReplaceAllMatches = True
+		    firstLine = re.Replace(firstLine)
+		    
+		    
+		    
+		    // now create the database and add data to records
+		    
+		    
+		    'Var db As SQLiteDatabase = dbConnect(firstLine)
+		    db  = dbConnect(firstLine )
+		    'MessageBox("Database created.")
+		    addData(db,records(),firstLine)
+		    'MessageBox("Data added to table.")
+		    
+		    
+		    
+		  Catch error As IOException
+		    MessageBox("Error: unable to open the data file.")
+		  End Try
+		  
+		  
+		End Sub
+	#tag EndMethod
+
 
 	#tag Note, Name = Improved code
 		The code first checks if the database file exists. If it does, the code tries to connect to the database and displays a message if the connection is successful. If the database file does not exist, the code opens the data file and reads the data into an array of strings. The first line of the data file contains the header record, which is used to create the database schema. The remaining lines of the data file contain the data records, which are added to the database. The code then populates a listbox with the data from the database.
@@ -291,6 +404,11 @@ Inherits DesktopApplication
 		  PopulateListBox(db, listBox)
 		End If
 	#tag EndNote
+
+
+	#tag Property, Flags = &h0
+		windowHandle As Ptr
+	#tag EndProperty
 
 
 	#tag Constant, Name = kEditClear, Type = String, Dynamic = False, Default = \"&Delete", Scope = Public

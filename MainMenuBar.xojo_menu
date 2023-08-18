@@ -18,6 +18,62 @@ Begin Menu MainMenuBar
          Visible = True
       End
    End
+   Begin DesktopMenuItem WindowMenu
+      SpecialMenu = 0
+      Index = -2147483648
+      Text = "Window"
+      AutoEnabled = True
+      AutoEnable = True
+      Visible = True
+      Begin DesktopMenuItem WindowMainWIndow
+         SpecialMenu = 0
+         Index = -2147483648
+         Text = "MainWIndow"
+         AutoEnabled = True
+         AutoEnable = True
+         Visible = True
+      End
+      Begin DesktopMenuItem WindowMinimize
+         SpecialMenu = 0
+         Index = -2147483648
+         Text = "Minimize"
+         AutoEnabled = True
+         AutoEnable = True
+         Visible = True
+      End
+      Begin DesktopMenuItem WindowZoom
+         SpecialMenu = 0
+         Index = -2147483648
+         Text = "Zoom"
+         AutoEnabled = True
+         AutoEnable = True
+         Visible = True
+      End
+      Begin DesktopMenuItem WindowTileLeft
+         SpecialMenu = 0
+         Index = -2147483648
+         Text = "Tile Left"
+         AutoEnabled = True
+         AutoEnable = True
+         Visible = True
+      End
+      Begin DesktopMenuItem WindowTileRight
+         SpecialMenu = 0
+         Index = -2147483648
+         Text = "Tile Right"
+         AutoEnabled = True
+         AutoEnable = True
+         Visible = True
+      End
+      Begin DesktopMenuItem UntitledSeparator
+         SpecialMenu = 0
+         Index = -2147483648
+         Text = "-"
+         AutoEnabled = True
+         AutoEnable = True
+         Visible = True
+      End
+   End
    Begin DesktopMenuItem EditMenu
       SpecialMenu = 0
       Index = -2147483648
