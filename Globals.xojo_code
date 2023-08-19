@@ -1,6 +1,10 @@
 #tag Module
 Protected Module Globals
 	#tag Property, Flags = &h0
+		appDebug As boolean = FALSE
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
 		db As SQLiteDatabase
 	#tag EndProperty
 

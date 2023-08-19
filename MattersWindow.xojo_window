@@ -24,7 +24,7 @@ Begin DesktopWindow MattersWindow
    Type            =   0
    Visible         =   True
    Width           =   880
-   Begin DesktopButton B_Cancel
+   Begin DesktopButton B_Quit
       AllowAutoDeactivate=   True
       Bold            =   False
       Cancel          =   True
@@ -45,7 +45,7 @@ Begin DesktopWindow MattersWindow
       LockTop         =   False
       MacButtonStyle  =   0
       Scope           =   2
-      TabIndex        =   5
+      TabIndex        =   10
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -91,7 +91,7 @@ Begin DesktopWindow MattersWindow
       RequiresSelection=   False
       RowSelectionType=   0
       Scope           =   0
-      TabIndex        =   3
+      TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -125,7 +125,7 @@ Begin DesktopWindow MattersWindow
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -162,7 +162,7 @@ Begin DesktopWindow MattersWindow
       Password        =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   1
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   ""
@@ -208,13 +208,13 @@ Begin DesktopWindow MattersWindow
       Visible         =   True
       Width           =   47
    End
-   Begin DesktopButton DeleteRow
+   Begin DesktopButton B_DeleteRow
       AllowAutoDeactivate=   True
       Bold            =   False
       Cancel          =   False
       Caption         =   "Delete Row"
       Default         =   False
-      Enabled         =   True
+      Enabled         =   False
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
@@ -229,7 +229,7 @@ Begin DesktopWindow MattersWindow
       LockTop         =   False
       MacButtonStyle  =   0
       Scope           =   0
-      TabIndex        =   4
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -260,7 +260,7 @@ Begin DesktopWindow MattersWindow
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   0
-      TabIndex        =   6
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -270,13 +270,13 @@ Begin DesktopWindow MattersWindow
       Visible         =   True
       Width           =   97
    End
-   Begin DesktopButton EditRow
+   Begin DesktopButton B_EditRow
       AllowAutoDeactivate=   True
       Bold            =   False
       Cancel          =   False
       Caption         =   "Edit Row"
       Default         =   False
-      Enabled         =   True
+      Enabled         =   False
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
@@ -291,7 +291,7 @@ Begin DesktopWindow MattersWindow
       LockTop         =   False
       MacButtonStyle  =   0
       Scope           =   0
-      TabIndex        =   7
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -301,13 +301,13 @@ Begin DesktopWindow MattersWindow
       Visible         =   True
       Width           =   106
    End
-   Begin DesktopButton ADDRow
+   Begin DesktopButton B_AddRow
       AllowAutoDeactivate=   True
       Bold            =   False
       Cancel          =   False
       Caption         =   "Add New"
       Default         =   False
-      Enabled         =   True
+      Enabled         =   False
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
@@ -322,7 +322,7 @@ Begin DesktopWindow MattersWindow
       LockTop         =   False
       MacButtonStyle  =   0
       Scope           =   0
-      TabIndex        =   8
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -332,17 +332,46 @@ Begin DesktopWindow MattersWindow
       Visible         =   True
       Width           =   106
    End
-   Begin DesktopGroupBox GroupBox1
+   Begin DesktopButton B_Save
       AllowAutoDeactivate=   True
       Bold            =   False
-      Caption         =   "Untitled"
-      Enabled         =   True
+      Cancel          =   False
+      Caption         =   "Save"
+      Default         =   False
+      Enabled         =   False
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
-      Height          =   456
+      Height          =   20
       Index           =   -2147483648
       Italic          =   False
+      Left            =   678
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      TabIndex        =   9
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   520
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin DesktopCanvas Canvas1
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   True
+      AllowTabs       =   False
+      Backdrop        =   0
+      Enabled         =   False
+      Height          =   459
+      Index           =   -2147483648
       Left            =   373
       LockBottom      =   False
       LockedInPosition=   False
@@ -350,16 +379,15 @@ Begin DesktopWindow MattersWindow
       LockRight       =   False
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   9
+      TabIndex        =   11
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
       Top             =   52
-      Transparent     =   False
-      Underline       =   False
+      Transparent     =   True
       Visible         =   True
-      Width           =   480
-      Begin DesktopTextField matterNumber
+      Width           =   487
+      Begin DesktopTextField Credit
          AllowAutoDeactivate=   True
          AllowFocusRing  =   True
          AllowSpellChecking=   False
@@ -375,9 +403,9 @@ Begin DesktopWindow MattersWindow
          Height          =   22
          Hint            =   ""
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   504
+         Left            =   518
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -394,348 +422,45 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   104
+         Top             =   417
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   308
+         Width           =   322
       End
-      Begin DesktopTextField clientName
+      Begin DesktopLabel L_Credit
          AllowAutoDeactivate=   True
-         AllowFocusRing  =   True
-         AllowSpellChecking=   False
-         AllowTabs       =   False
-         BackgroundColor =   &cFFFFFF
          Bold            =   False
          Enabled         =   True
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Format          =   ""
-         HasBorder       =   True
-         Height          =   22
-         Hint            =   ""
+         Height          =   20
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   504
+         Left            =   400
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   False
          LockTop         =   True
-         MaximumCharactersAllowed=   0
-         Password        =   False
-         ReadOnly        =   False
+         Multiline       =   False
          Scope           =   0
+         Selectable      =   False
          TabIndex        =   1
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   ""
-         TextAlignment   =   0
+         Text            =   "Credit"
+         TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   138
+         Top             =   419
          Transparent     =   False
          Underline       =   False
-         ValidationMask  =   ""
          Visible         =   True
-         Width           =   308
-      End
-      Begin DesktopTextField Status
-         AllowAutoDeactivate=   True
-         AllowFocusRing  =   True
-         AllowSpellChecking=   False
-         AllowTabs       =   False
-         BackgroundColor =   &cFFFFFF
-         Bold            =   False
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Format          =   ""
-         HasBorder       =   True
-         Height          =   22
-         Hint            =   ""
-         Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
-         Italic          =   False
-         Left            =   504
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         MaximumCharactersAllowed=   0
-         Password        =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   2
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   ""
-         TextAlignment   =   0
-         TextColor       =   &c000000
-         Tooltip         =   ""
-         Top             =   172
-         Transparent     =   False
-         Underline       =   False
-         ValidationMask  =   ""
-         Visible         =   True
-         Width           =   308
-      End
-      Begin DesktopTextField matterType
-         AllowAutoDeactivate=   True
-         AllowFocusRing  =   True
-         AllowSpellChecking=   False
-         AllowTabs       =   False
-         BackgroundColor =   &cFFFFFF
-         Bold            =   False
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Format          =   ""
-         HasBorder       =   True
-         Height          =   22
-         Hint            =   ""
-         Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
-         Italic          =   False
-         Left            =   504
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         MaximumCharactersAllowed=   0
-         Password        =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   3
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   ""
-         TextAlignment   =   0
-         TextColor       =   &c000000
-         Tooltip         =   ""
-         Top             =   206
-         Transparent     =   False
-         Underline       =   False
-         ValidationMask  =   ""
-         Visible         =   True
-         Width           =   308
-      End
-      Begin DesktopTextField Description
-         AllowAutoDeactivate=   True
-         AllowFocusRing  =   True
-         AllowSpellChecking=   False
-         AllowTabs       =   False
-         BackgroundColor =   &cFFFFFF
-         Bold            =   False
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Format          =   ""
-         HasBorder       =   True
-         Height          =   22
-         Hint            =   ""
-         Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
-         Italic          =   False
-         Left            =   504
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         MaximumCharactersAllowed=   0
-         Password        =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   4
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   ""
-         TextAlignment   =   0
-         TextColor       =   &c000000
-         Tooltip         =   ""
-         Top             =   239
-         Transparent     =   False
-         Underline       =   False
-         ValidationMask  =   ""
-         Visible         =   True
-         Width           =   308
-      End
-      Begin DesktopTextField dateField
-         AllowAutoDeactivate=   True
-         AllowFocusRing  =   True
-         AllowSpellChecking=   False
-         AllowTabs       =   False
-         BackgroundColor =   &cFFFFFF
-         Bold            =   False
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Format          =   ""
-         HasBorder       =   True
-         Height          =   22
-         Hint            =   ""
-         Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
-         Italic          =   False
-         Left            =   504
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         MaximumCharactersAllowed=   0
-         Password        =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   5
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   ""
-         TextAlignment   =   0
-         TextColor       =   &c000000
-         Tooltip         =   ""
-         Top             =   272
-         Transparent     =   False
-         Underline       =   False
-         ValidationMask  =   ""
-         Visible         =   True
-         Width           =   308
-      End
-      Begin DesktopTextField State
-         AllowAutoDeactivate=   True
-         AllowFocusRing  =   True
-         AllowSpellChecking=   False
-         AllowTabs       =   False
-         BackgroundColor =   &cFFFFFF
-         Bold            =   False
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Format          =   ""
-         HasBorder       =   True
-         Height          =   22
-         Hint            =   ""
-         Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
-         Italic          =   False
-         Left            =   504
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         MaximumCharactersAllowed=   0
-         Password        =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   6
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   ""
-         TextAlignment   =   0
-         TextColor       =   &c000000
-         Tooltip         =   ""
-         Top             =   305
-         Transparent     =   False
-         Underline       =   False
-         ValidationMask  =   ""
-         Visible         =   True
-         Width           =   308
-      End
-      Begin DesktopTextField staffResponsible
-         AllowAutoDeactivate=   True
-         AllowFocusRing  =   True
-         AllowSpellChecking=   False
-         AllowTabs       =   False
-         BackgroundColor =   &cFFFFFF
-         Bold            =   False
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Format          =   ""
-         HasBorder       =   True
-         Height          =   22
-         Hint            =   ""
-         Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
-         Italic          =   False
-         Left            =   504
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         MaximumCharactersAllowed=   0
-         Password        =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   7
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   ""
-         TextAlignment   =   0
-         TextColor       =   &c000000
-         Tooltip         =   ""
-         Top             =   338
-         Transparent     =   False
-         Underline       =   False
-         ValidationMask  =   ""
-         Visible         =   True
-         Width           =   308
-      End
-      Begin DesktopTextField staffActing
-         AllowAutoDeactivate=   True
-         AllowFocusRing  =   True
-         AllowSpellChecking=   False
-         AllowTabs       =   False
-         BackgroundColor =   &cFFFFFF
-         Bold            =   False
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Format          =   ""
-         HasBorder       =   True
-         Height          =   22
-         Hint            =   ""
-         Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
-         Italic          =   False
-         Left            =   504
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         MaximumCharactersAllowed=   0
-         Password        =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   8
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   ""
-         TextAlignment   =   0
-         TextColor       =   &c000000
-         Tooltip         =   ""
-         Top             =   371
-         Transparent     =   False
-         Underline       =   False
-         ValidationMask  =   ""
-         Visible         =   True
-         Width           =   308
+         Width           =   106
       End
       Begin DesktopTextField staffAssisting
          AllowAutoDeactivate=   True
@@ -753,9 +478,9 @@ Begin DesktopWindow MattersWindow
          Height          =   22
          Hint            =   ""
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   504
+         Left            =   518
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -765,21 +490,54 @@ Begin DesktopWindow MattersWindow
          Password        =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   9
+         TabIndex        =   2
          TabPanelIndex   =   0
          TabStop         =   True
          Text            =   ""
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   404
+         Top             =   384
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   308
+         Width           =   322
       End
-      Begin DesktopTextField Credit
+      Begin DesktopLabel L_staffAssisting
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "Canvas1"
+         Italic          =   False
+         Left            =   400
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   3
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "Staff Assisting"
+         TextAlignment   =   3
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   386
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   106
+      End
+      Begin DesktopTextField staffActing
          AllowAutoDeactivate=   True
          AllowFocusRing  =   True
          AllowSpellChecking=   False
@@ -795,9 +553,234 @@ Begin DesktopWindow MattersWindow
          Height          =   22
          Hint            =   ""
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   504
+         Left            =   518
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MaximumCharactersAllowed=   0
+         Password        =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   4
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   ""
+         TextAlignment   =   0
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   351
+         Transparent     =   False
+         Underline       =   False
+         ValidationMask  =   ""
+         Visible         =   True
+         Width           =   322
+      End
+      Begin DesktopLabel L_staffActing
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "Canvas1"
+         Italic          =   False
+         Left            =   400
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   5
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "Staff Acting"
+         TextAlignment   =   3
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   353
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   106
+      End
+      Begin DesktopTextField staffResponsible
+         AllowAutoDeactivate=   True
+         AllowFocusRing  =   True
+         AllowSpellChecking=   False
+         AllowTabs       =   False
+         BackgroundColor =   &cFFFFFF
+         Bold            =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Format          =   ""
+         HasBorder       =   True
+         Height          =   22
+         Hint            =   ""
+         Index           =   -2147483648
+         InitialParent   =   "Canvas1"
+         Italic          =   False
+         Left            =   518
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MaximumCharactersAllowed=   0
+         Password        =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   6
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   ""
+         TextAlignment   =   0
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   318
+         Transparent     =   False
+         Underline       =   False
+         ValidationMask  =   ""
+         Visible         =   True
+         Width           =   322
+      End
+      Begin DesktopLabel L_RESPONSIBLE
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "Canvas1"
+         Italic          =   False
+         Left            =   400
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   7
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "Staff Responsible"
+         TextAlignment   =   3
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   320
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   106
+      End
+      Begin DesktopTextField State
+         AllowAutoDeactivate=   True
+         AllowFocusRing  =   True
+         AllowSpellChecking=   False
+         AllowTabs       =   False
+         BackgroundColor =   &cFFFFFF
+         Bold            =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Format          =   ""
+         HasBorder       =   True
+         Height          =   22
+         Hint            =   ""
+         Index           =   -2147483648
+         InitialParent   =   "Canvas1"
+         Italic          =   False
+         Left            =   518
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MaximumCharactersAllowed=   0
+         Password        =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   8
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   ""
+         TextAlignment   =   0
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   285
+         Transparent     =   False
+         Underline       =   False
+         ValidationMask  =   ""
+         Visible         =   True
+         Width           =   322
+      End
+      Begin DesktopLabel L_State
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "Canvas1"
+         Italic          =   False
+         Left            =   400
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   9
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "State"
+         TextAlignment   =   3
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   287
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   106
+      End
+      Begin DesktopTextField dateField
+         AllowAutoDeactivate=   True
+         AllowFocusRing  =   True
+         AllowSpellChecking=   False
+         AllowTabs       =   False
+         BackgroundColor =   &cFFFFFF
+         Bold            =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Format          =   ""
+         HasBorder       =   True
+         Height          =   22
+         Hint            =   ""
+         Index           =   -2147483648
+         InitialParent   =   "Canvas1"
+         Italic          =   False
+         Left            =   518
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -814,14 +797,14 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   437
+         Top             =   252
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   308
+         Width           =   322
       End
-      Begin DesktopLabel L_matterNumber
+      Begin DesktopLabel L_dateField
          AllowAutoDeactivate=   True
          Bold            =   False
          Enabled         =   True
@@ -830,9 +813,9 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Height          =   20
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   386
+         Left            =   400
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -844,50 +827,59 @@ Begin DesktopWindow MattersWindow
          TabIndex        =   11
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Matter Number"
+         Text            =   "Instruction Date"
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   106
+         Top             =   254
          Transparent     =   False
          Underline       =   False
          Visible         =   True
          Width           =   106
       End
-      Begin DesktopLabel L_Credit
+      Begin DesktopTextField Description
          AllowAutoDeactivate=   True
+         AllowFocusRing  =   True
+         AllowSpellChecking=   False
+         AllowTabs       =   False
+         BackgroundColor =   &cFFFFFF
          Bold            =   False
          Enabled         =   True
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Format          =   ""
+         HasBorder       =   True
+         Height          =   22
+         Hint            =   ""
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   386
+         Left            =   518
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   False
          LockTop         =   True
-         Multiline       =   False
+         MaximumCharactersAllowed=   0
+         Password        =   False
+         ReadOnly        =   False
          Scope           =   0
-         Selectable      =   False
          TabIndex        =   12
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Credit"
-         TextAlignment   =   3
+         Text            =   ""
+         TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   439
+         Top             =   219
          Transparent     =   False
          Underline       =   False
+         ValidationMask  =   ""
          Visible         =   True
-         Width           =   106
+         Width           =   322
       End
-      Begin DesktopLabel L_staffAssisting
+      Begin DesktopLabel L_Description
          AllowAutoDeactivate=   True
          Bold            =   False
          Enabled         =   True
@@ -896,9 +888,9 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Height          =   20
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   386
+         Left            =   400
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -910,50 +902,59 @@ Begin DesktopWindow MattersWindow
          TabIndex        =   13
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Staff Assisting"
+         Text            =   "Description"
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   406
+         Top             =   221
          Transparent     =   False
          Underline       =   False
          Visible         =   True
          Width           =   106
       End
-      Begin DesktopLabel L_staffActing
+      Begin DesktopTextField matterType
          AllowAutoDeactivate=   True
+         AllowFocusRing  =   True
+         AllowSpellChecking=   False
+         AllowTabs       =   False
+         BackgroundColor =   &cFFFFFF
          Bold            =   False
          Enabled         =   True
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Format          =   ""
+         HasBorder       =   True
+         Height          =   22
+         Hint            =   ""
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   386
+         Left            =   518
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   False
          LockTop         =   True
-         Multiline       =   False
+         MaximumCharactersAllowed=   0
+         Password        =   False
+         ReadOnly        =   False
          Scope           =   0
-         Selectable      =   False
          TabIndex        =   14
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Staff Acting"
-         TextAlignment   =   3
+         Text            =   ""
+         TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   373
+         Top             =   186
          Transparent     =   False
          Underline       =   False
+         ValidationMask  =   ""
          Visible         =   True
-         Width           =   106
+         Width           =   322
       End
-      Begin DesktopLabel L_RESPONSIBLE
+      Begin DesktopLabel L_matterType
          AllowAutoDeactivate=   True
          Bold            =   False
          Enabled         =   True
@@ -962,9 +963,9 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Height          =   20
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   386
+         Left            =   400
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -976,50 +977,59 @@ Begin DesktopWindow MattersWindow
          TabIndex        =   15
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Staff Responsible"
+         Text            =   "Matter Type"
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   340
+         Top             =   188
          Transparent     =   False
          Underline       =   False
          Visible         =   True
          Width           =   106
       End
-      Begin DesktopLabel L_State
+      Begin DesktopTextField Status
          AllowAutoDeactivate=   True
+         AllowFocusRing  =   True
+         AllowSpellChecking=   False
+         AllowTabs       =   False
+         BackgroundColor =   &cFFFFFF
          Bold            =   False
          Enabled         =   True
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Format          =   ""
+         HasBorder       =   True
+         Height          =   22
+         Hint            =   ""
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   386
+         Left            =   518
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   False
          LockTop         =   True
-         Multiline       =   False
+         MaximumCharactersAllowed=   0
+         Password        =   False
+         ReadOnly        =   False
          Scope           =   0
-         Selectable      =   False
          TabIndex        =   16
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "State"
-         TextAlignment   =   3
+         Text            =   ""
+         TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   307
+         Top             =   152
          Transparent     =   False
          Underline       =   False
+         ValidationMask  =   ""
          Visible         =   True
-         Width           =   106
+         Width           =   322
       End
-      Begin DesktopLabel L_dateField
+      Begin DesktopLabel L_Status
          AllowAutoDeactivate=   True
          Bold            =   False
          Enabled         =   True
@@ -1028,9 +1038,9 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Height          =   20
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   386
+         Left            =   400
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -1042,50 +1052,59 @@ Begin DesktopWindow MattersWindow
          TabIndex        =   17
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Instruction Date"
+         Text            =   "Status"
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   274
+         Top             =   154
          Transparent     =   False
          Underline       =   False
          Visible         =   True
          Width           =   106
       End
-      Begin DesktopLabel L_Description
+      Begin DesktopTextField clientName
          AllowAutoDeactivate=   True
+         AllowFocusRing  =   True
+         AllowSpellChecking=   False
+         AllowTabs       =   False
+         BackgroundColor =   &cFFFFFF
          Bold            =   False
          Enabled         =   True
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Format          =   ""
+         HasBorder       =   True
+         Height          =   22
+         Hint            =   ""
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   386
+         Left            =   518
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   False
          LockTop         =   True
-         Multiline       =   False
+         MaximumCharactersAllowed=   0
+         Password        =   False
+         ReadOnly        =   False
          Scope           =   0
-         Selectable      =   False
          TabIndex        =   18
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Description"
-         TextAlignment   =   3
+         Text            =   ""
+         TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   241
+         Top             =   118
          Transparent     =   False
          Underline       =   False
+         ValidationMask  =   ""
          Visible         =   True
-         Width           =   106
+         Width           =   322
       End
-      Begin DesktopLabel L_matterType
+      Begin DesktopLabel L_clientName
          AllowAutoDeactivate=   True
          Bold            =   False
          Enabled         =   True
@@ -1094,9 +1113,9 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Height          =   20
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   386
+         Left            =   400
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -1108,50 +1127,59 @@ Begin DesktopWindow MattersWindow
          TabIndex        =   19
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Matter Type"
+         Text            =   "Client Name"
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   208
+         Top             =   120
          Transparent     =   False
          Underline       =   False
          Visible         =   True
          Width           =   106
       End
-      Begin DesktopLabel L_Status
+      Begin DesktopTextField matterNumber
          AllowAutoDeactivate=   True
+         AllowFocusRing  =   True
+         AllowSpellChecking=   False
+         AllowTabs       =   False
+         BackgroundColor =   &cFFFFFF
          Bold            =   False
          Enabled         =   True
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Format          =   ""
+         HasBorder       =   True
+         Height          =   22
+         Hint            =   ""
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   386
+         Left            =   518
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   False
          LockTop         =   True
-         Multiline       =   False
+         MaximumCharactersAllowed=   0
+         Password        =   False
+         ReadOnly        =   False
          Scope           =   0
-         Selectable      =   False
          TabIndex        =   20
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Status"
-         TextAlignment   =   3
+         Text            =   ""
+         TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   174
+         Top             =   84
          Transparent     =   False
          Underline       =   False
+         ValidationMask  =   ""
          Visible         =   True
-         Width           =   106
+         Width           =   322
       End
-      Begin DesktopLabel L_clientName
+      Begin DesktopLabel L_matterNumber
          AllowAutoDeactivate=   True
          Bold            =   False
          Enabled         =   True
@@ -1160,9 +1188,9 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Height          =   20
          Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
+         InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   386
+         Left            =   400
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -1174,54 +1202,41 @@ Begin DesktopWindow MattersWindow
          TabIndex        =   21
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Client Name"
+         Text            =   "Matter Number"
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   140
+         Top             =   84
          Transparent     =   False
          Underline       =   False
          Visible         =   True
          Width           =   106
       End
    End
-   Begin DesktopButton B_Save
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Cancel          =   False
-      Caption         =   "Save"
-      Default         =   False
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   -2147483648
-      Italic          =   False
-      Left            =   678
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MacButtonStyle  =   0
-      Scope           =   0
-      TabIndex        =   10
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   520
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   80
-   End
 End
 #tag EndDesktopWindow
 
 #tag WindowCode
 	#tag Event
+		Sub Closing()
+		  
+		  
+		  
+		  If appDebug then
+		    db.RollbackTransaction
+		  End If
+		End Sub
+	#tag EndEvent
+
+	#tag Event
 		Sub Opening()
+		  
+		  appDebug = False
+		  
+		  If appDebug Then
+		    db.BeginTransaction
+		  End If
+		  
 		  Var rs As RowSet
 		  
 		  If dbFile.Exists Then
@@ -1245,9 +1260,29 @@ End
 		    
 		  End If 
 		  
+		  
+		  NameField.SetFocus
 		End Sub
 	#tag EndEvent
 
+
+	#tag Method, Flags = &h0
+		Sub activateCanvasAndButtons(value as BOOLEAN)
+		  If value = True Then
+		    canvas1.Enabled = True
+		    B_AddRow.Enabled = TRUE
+		    B_DeleteRow.Enabled = TRUE
+		    B_Save.Enabled = TRUE
+		    B_EditRow.Enabled = True
+		  Else
+		    canvas1.Enabled = FALSE
+		    B_AddRow.Enabled = FALSE
+		    B_DeleteRow.Enabled = FALSE
+		    B_Save.Enabled = FALSE
+		    B_EditRow.Enabled = FALSE
+		  End If
+		End Sub
+	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub clearEntryFields()
@@ -1335,6 +1370,8 @@ End
 		    MessageBox("Unable to complete the search")
 		  End Try
 		  
+		  // clear the data entry fields
+		  clearEntryFields()
 		  
 		End Sub
 	#tag EndMethod
@@ -1422,7 +1459,7 @@ End
 
 #tag EndWindowCode
 
-#tag Events B_Cancel
+#tag Events B_Quit
 	#tag Event
 		Sub Pressed()
 		  self.Close
@@ -1469,7 +1506,10 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub SelectionChanged()
-		  If me.SelectedRowCount = 1 Then
+		  If Me.SelectedRowCount = 1 Then
+		    
+		    activateCanvasAndButtons(True)
+		    
 		    Try
 		      
 		      Var ID As String = Me.RowTagAt(Me.SelectedRowIndex)
@@ -1490,6 +1530,10 @@ End
 		    Catch error As DatabaseException
 		      MessageBox ("The matter details could not be loaded due to an error.")
 		    End Try
+		  Else
+		    activateCanvasAndButtons(False)
+		    clearEntryFields()
+		    currentRow = Nil // no row selected
 		  End If
 		  
 		End Sub
@@ -1503,7 +1547,7 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events DeleteRow
+#tag Events B_DeleteRow
 	#tag Event
 		Sub Pressed()
 		  If MattersWindow.ListMembers. SelectedRowCount = 1 Then
@@ -1517,6 +1561,7 @@ End
 		  End If
 		  
 		  resetSearch()
+		  
 		  // need to remove the folferitem as well/???
 		End Sub
 	#tag EndEvent
@@ -1526,26 +1571,29 @@ End
 		Function MouseDown(x As Integer, y As Integer) As Boolean
 		  NameField.Text = ""
 		  B_SearchButton.SetFocus
+		  clearEntryFields()
 		  resetSearch()
 		End Function
 	#tag EndEvent
 #tag EndEvents
-#tag Events EditRow
+#tag Events B_EditRow
 	#tag Event
 		Sub Pressed()
 		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events ADDRow
+#tag Events B_AddRow
 	#tag Event
 		Sub Pressed()
 		  newRow = True
-		  
 		  clearEntryFields()
+		  ListMembers.SelectedRowIndex = -1 // deselct any prior selected row
+		  currentRow = Nil // clear global entry
+		  
+		  B_Save.SetFocus
 		   
-		  // clear fields
-		  //make save button active (? change colour)
+		  
 		  
 		  
 		End Sub

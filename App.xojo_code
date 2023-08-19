@@ -5,6 +5,9 @@ Inherits DesktopApplication
 		Sub Opening()
 		  'Var db As New SQLiteDatabase
 		  
+		  
+		  
+		  
 		  dbFile =SpecialFolder.Documents.Child("LeapData").Child("LeapDATA.sqlite")
 		  db = New SQLiteDatabase
 		  db.DatabaseFile = dbfile
@@ -18,6 +21,7 @@ Inherits DesktopApplication
 		  'End Try
 		  '
 		  'End If
+		  
 		  
 		  
 		  If dbFile.Exists Then
