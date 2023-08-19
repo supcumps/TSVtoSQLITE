@@ -1358,16 +1358,17 @@ End
 		  Else
 		    
 		  End If
-		  sql = sql + "ORDER BY CLIENT DESC "
+		  sql = sql + "ORDER BY CLIENT ASC "  // client displayed with increasing alphabet order
+		  
 		  
 		  
 		  Try
 		    rs = db.SelectSQL(SQL)
-		    // populate the listbox
+		    // populate the listbox - pass name of lisbox and recordset to use
 		    PopulateListBox(listMembers, rs)
 		  Catch error As DatabaseException
 		    System.Beep
-		    MessageBox("Unable to complete the search")
+		    MessageBox("Unable to complete the search and populate the list box")
 		  End Try
 		  
 		  // clear the data entry fields
