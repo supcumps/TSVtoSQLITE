@@ -7,7 +7,7 @@
 				Begin BuildProjectStep Build
 				End
 				Begin SignProjectStep Sign
-				  DeveloperID=
+				  DeveloperID=com.JHLConsultants.LeapData
 				End
 			End
 			Begin BuildStepList Windows

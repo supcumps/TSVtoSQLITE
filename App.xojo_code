@@ -5,22 +5,19 @@ Inherits DesktopApplication
 		Sub Opening()
 		  'Var db As New SQLiteDatabase
 		  
-		  
-		  
-		  
 		  dbFile =SpecialFolder.Documents.Child("LeapData").Child("LeapDATA.sqlite")
 		  db = New SQLiteDatabase
 		  db.DatabaseFile = dbfile
 		  
 		  // uncomment to test creation of database
-		  'If dbFile.Exists Then
-		  'Try
-		  'dbfile.Remove
-		  'Catch e As DatabaseException
-		  'MessageBox("Unable to remove existing database " + e.Message)
-		  'End Try
-		  '
-		  'End If
+		  If dbFile.Exists Then
+		    Try
+		      dbfile.Remove
+		    Catch e As DatabaseException
+		      MessageBox("Unable to remove existing database " + e.Message)
+		    End Try
+		    
+		  End If
 		  
 		  
 		  
@@ -38,7 +35,7 @@ Inherits DesktopApplication
 		    //======================================
 		    
 		    Var f As  New FolderItem 
-		    f = SpecialFolder.Documents.Child("LeapData").Child("MatterList2.tsv")
+		    f = SpecialFolder.Documents.Child("LeapData").Child("MatterList.tsv")
 		    'f = FolderItem.ShowOpenFileDialog("text/plain")
 		    
 		    makeDatabase(f)

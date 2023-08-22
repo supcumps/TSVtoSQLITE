@@ -1213,6 +1213,38 @@ Begin DesktopWindow MattersWindow
          Width           =   106
       End
    End
+   Begin DesktopLabel L_TotalMatters
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   72
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   12
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Total Matters:"
+      TextAlignment   =   0
+      TextColor       =   &c000000
+      Tooltip         =   ""
+      Top             =   520
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   207
+   End
 End
 #tag EndDesktopWindow
 
@@ -1296,7 +1328,7 @@ End
 		    Credit.Text = "" 
 		    dateField.Text = ""  
 		    Description.Text = "" 
-		     staffActing.Text = "" 
+		    staffActing.Text = "" 
 		    staffAssisting.Text = "" 
 		    staffResponsible.Text = "" 
 		  End If
@@ -1341,6 +1373,7 @@ End
 		    
 		    ListMembers.RowTagAt(ListMembers.LastAddedRowIndex)=row.Column("ID").StringValue
 		  Next
+		  L_TotalMatters.Text = ("Total matters = " +  ListMembers.RowCount.ToString)
 		End Sub
 	#tag EndMethod
 
@@ -1491,7 +1524,7 @@ End
 		    f  = SpecialFolder.Documents.child("LeapData").Child(item)
 		    
 		    If f <> Nil And f.Exists Then
-		      messagebox("Locating " + name)
+		      'messagebox("Locating " + name)
 		      f.launch
 		    Else
 		      MessageBox(f.NativePath + " Folder not found")
@@ -1593,7 +1626,7 @@ End
 		  currentRow = Nil // clear global entry
 		  
 		  B_Save.SetFocus
-		   
+		  
 		  
 		  
 		  
@@ -1628,7 +1661,7 @@ End
 		      CurrentRow.Column("Client").StringValue = clientName.Text
 		      CurrentRow.Column("State").StringValue = State.Text 
 		      CurrentRow.Column("Status").StringValue = Status.Text
-		       CurrentRow.Column("Type").StringValue = matterType.Text
+		      CurrentRow.Column("Type").StringValue = matterType.Text
 		      CurrentRow.Column("Credit").StringValue = Credit.Text
 		      CurrentRow.Column("InstructionDate").StringValue = dateField.Text  
 		      CurrentRow.Column("Description").StringValue = Description.Text 
