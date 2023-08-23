@@ -34,9 +34,15 @@ Inherits DesktopApplication
 		  Else
 		    //======================================
 		    Try
+		      Try
+		        db.CreateDatabase    // if successful, creates and opens the databse
+		      Catch error As IOException
+		        MessageBox("The database file could not be created: " + error.Message)
+		      End Try
+		      // now add table to database
 		      Var f As  New FolderItem 
 		      f = SpecialFolder.Documents.Child("LeapData").Child("MatterList.tsv")
-		      makeDatabase(f)
+		      makeDatabaseTable(f)
 		      
 		      
 		    Catch
@@ -159,7 +165,7 @@ Inherits DesktopApplication
 		  
 		  Var SQL As String = ""
 		  Var columns As String = ""
-		  Var parenthesis As String = DecodeHex("22")
+		  Var parenthesis As String = DecodeHex("22") // hex code for "
 		  
 		  For x As Integer = 1 To records.count -1 // number of rows excluding  the header
 		    
@@ -171,7 +177,7 @@ Inherits DesktopApplication
 		    columns = columns.ReplaceAll("'","")
 		    
 		    columns = columns.ReplaceAll(parenthesis ,"")
-		    // now parse that to replace tabs with commas
+		    // now parse that to replace tabs with commas using regex
 		    columns = re.Replace(columns)
 		    
 		    columns = "'"+ columns +"'" /// add the single quote for the sql statement
@@ -254,7 +260,7 @@ Inherits DesktopApplication
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub makeDatabase(f as folderItem)
+		Sub makeDatabaseTable(f as folderItem)
 		  
 		  Try 
 		    'db = New SQLiteDatabase
