@@ -1420,69 +1420,11 @@ End
 
 
 	#tag Note, Name = Improved code for window openeing event
+		change listbox to add relevent info
+		decrease size of client info to make room
+		Add button and menu item to see listbox with client details
 		
 		
-		Sure, the code can be improved in a few ways. Here are a few suggestions:
-		
-		The code could be more modularized. The code could be divided into separate functions for each task, such as creating the RowSet, populating the listbox, and handling errors. This would make the code easier to read and understand, and it would also make it easier to maintain and update the code.
-		The code could be more error-proof. The code could be checked for potential errors, such as trying to select a table that does not exist. The code could also be checked for potential security vulnerabilities, such as allowing users to input malicious data into the listbox.
-		The code could be more efficient. The code could be optimized to run faster. This could be done by using more efficient algorithms, or by avoiding unnecessary operations.
-		Here is an example of how the code could be improved:
-		
-		// Create a function to create the RowSet.
-		Function CreateRowSet(db As SQLiteDatabase) As RowSet
-		  Dim rs As RowSet
-		  rs = db.SelectSQL("SELECT * FROM Leap")
-		  Return rs
-		End Function
-		
-		// Create a function to populate the listbox.
-		Function PopulateListBox(listMembers As ListBox, rs As RowSet) As Boolean
-		  Dim i As Integer
-		  
-		  For i = 1 To rs.GetRowCount() - 1
-		    Dim row As Row
-		    row = rs.GetRow(i)
-		    listMembers.AddItem(row.Field("Matter"))
-		  Next
-		
-		  Return True
-		End Function
-		
-		// Create a function to handle errors.
-		Function HandleError(error As DatabaseException) As Boolean
-		  MessageBox("Connection error: " + error.Message)
-		  Return False
-		End Function
-		
-		// Main function
-		If dbFile.Exists Then
-		  rs = CreateRowSet(db)
-		  PopulateListBox(listMembers, rs)
-		Else
-		  HandleError(error)
-		End If
-		This code is more modularized, error-proof, and efficient than the original code. It is also easier to read and understand.
-		
-		Here is a specific improvement that could be made to the code:
-		
-		The code currently creates the RowSet and populates the listbox in the same Try/Catch block. This means that if there is an error creating the RowSet, the listbox will not be populated. A better approach would be to create the RowSet in a separate Try/Catch block, and then populate the listbox in a separate Try/Catch block. This would ensure that the listbox is only populated if the RowSet is successfully created.
-		
-		Here is the improved code:
-		
-		// Create a RowSet.
-		Dim rs As RowSet
-		Try
-		  rs = db.SelectSQL("SELECT * FROM Leap")
-		Catch error As DatabaseException
-		  HandleError(error)
-		End Try
-		
-		// Populate the listbox.
-		If rs IsNot Nothing Then
-		  PopulateListBox(listMembers, rs)
-		End If
-		This code is more robust and ensures that the listbox is only populated if the RowSet is successfully created.
 	#tag EndNote
 
 

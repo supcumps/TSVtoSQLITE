@@ -10,14 +10,14 @@ Inherits DesktopApplication
 		  db.DatabaseFile = dbfile
 		  
 		  // uncomment to test creation of database
-		  If dbFile.Exists Then
-		    Try
-		      dbfile.Remove
-		    Catch e As DatabaseException
-		      MessageBox("Unable to remove existing database " + e.Message)
-		    End Try
-		    
-		  End If
+		  'If dbFile.Exists Then
+		  'Try
+		  'dbfile.Remove
+		  'Catch e As DatabaseException
+		  'MessageBox("Unable to remove existing database " + e.Message)
+		  'End Try
+		  '
+		  'End If
 		  
 		  
 		  
@@ -33,20 +33,24 @@ Inherits DesktopApplication
 		    End Try
 		  Else
 		    //======================================
+		    
 		    Try
-		      Try
-		        db.CreateDatabase    // if successful, creates and opens the databse
-		      Catch error As IOException
-		        MessageBox("The database file could not be created: " + error.Message)
-		      End Try
-		      // now add table to database
+		      db.CreateDatabase    // if successful, creates and opens the databse
+		    Catch error As IOException
+		      MessageBox("The database file could not be created: " + error.Message)
+		    End Try
+		    // now add tables to database
+		    Try
 		      Var f As  New FolderItem 
 		      f = SpecialFolder.Documents.Child("LeapData").Child("MatterList.tsv")
-		      makeDatabaseTable(f)
+		      makeDatabaseTable(f,"Leap")
 		      
-		      
-		    Catch
+		      f = SpecialFolder.Documents.Child("LeapData").Child("ClientDetails.tsv")
+		      makeDatabaseTable(f,"Client")
+		    Catch error As DatabaseException
+		      MessageBox("Unable to create table " + error.message)
 		    End Try
+		    
 		    
 		    
 		  End If
@@ -145,7 +149,7 @@ Inherits DesktopApplication
 
 
 	#tag Method, Flags = &h0
-		Sub addData(db as SQLiteDatabase, records() as string, firstLine as String, dbTable as String)
+		Sub addData(db as SQLiteDatabase, records() as string, headings as String, dbTable as String)
 		  
 		  
 		  Var re As New RegEx
@@ -169,8 +173,8 @@ Inherits DesktopApplication
 		  
 		  For x As Integer = 1 To records.count -1 // number of rows excluding  the header
 		    
-		    
-		    sql = "INSERT INTO "+ dbTable  + "("+ firstline + ") VALUES ("
+		    ///  db.ExecuteSQL("INSERT INTO team (Name, Coach) VALUES ('Penguins', 'Coach Mike')")
+		    sql = "INSERT INTO "+ dbTable  + "("+ headings + ") VALUES ("
 		    
 		    columns = records(x)
 		    // remove any addiitonal apostrophe's
@@ -201,48 +205,6 @@ Inherits DesktopApplication
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function dbConnect(firstLine as string) As SQLiteDatabase
-		  'Var db As SQLiteDatabase
-		  'Var dbFile As FolderItem
-		  
-		  'dbFile = New FolderItem("LeapDATA.sqlite")
-		  
-		  
-		  'db = New SQLiteDatabase
-		  'db.DatabaseFile = dbFile
-		  
-		  Var headings() As String = firstLine.Split(",")
-		  
-		  
-		  Try
-		    db.CreateDatabase
-		    db.Connect
-		    Var SQL As String
-		    sql = "CREATE TABLE Leap (ID INTEGER PRIMARY KEY AUTOINCREMENT"
-		    For Each rec As String In headings
-		      SQL = SQL + "," + rec + " TEXT"
-		    Next
-		    SQL = SQL +");" 
-		    
-		    'MessageBox(sql)
-		    
-		    db.ExecuteSQL(SQL)
-		    Return db
-		    
-		  Catch error As IOException
-		    MessageBox("The database could not be created: " + error.Message)
-		  Catch error As DatabaseException
-		    MessageBox("Database error: " + error.Message)
-		  End Try
-		  
-		  
-		  
-		  
-		  
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
 		Function getFrontWindow() As desktopWindow
 		  'Public Function getFrontWindow() As Window
 		  Var frontmostWindow As desktopWindow
@@ -260,11 +222,11 @@ Inherits DesktopApplication
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub makeDatabaseTable(f as folderItem)
+		Sub makeDatabaseTable(f as folderItem, dbTable as String)
+		  
 		  
 		  Try 
-		    'db = New SQLiteDatabase
-		    'db.DatabaseFile = dbfile
+		    
 		    
 		    Var fileData As String
 		    Var tis As TextInputStream
@@ -282,6 +244,7 @@ Inherits DesktopApplication
 		    // the first line contains the header record
 		    Var firstLine As String =  records(0)
 		    
+		    
 		    //
 		    // remove spaces and periods from firstLine
 		    //1.
@@ -292,22 +255,34 @@ Inherits DesktopApplication
 		    firstLine = firstLine.ReplaceAll( " ", "" )
 		    //4.  use regex to replace tabs with a ","
 		    
+		    // now get a separate string for the headings
+		    Var headings As String = firstLine
+		    // replace tabs with ,
+		    'Var tab As String = DecodeHex("9") //ascii for horizontal tab
+		    'headings = headings.ReplaceAll( tab,",")
+		    
+		    // now remove tabs from firstline and prepare for SQL
 		    Var re As New RegEx
 		    re.SearchPattern = "\t"
-		    re.ReplacementPattern = ","
+		    re.ReplacementPattern = " TEXT, "
 		    re.Options.ReplaceAllMatches = True
 		    firstLine = re.Replace(firstLine)
 		    
+		    // now get a separate string for the headings
+		    re.ReplacementPattern = ", "
+		    headings = re.Replace(headings)
 		    
 		    
-		    // now create the database and add data to records
+		    // now create the database table and add data to records
+		    //sql = "CREATE TABLE Team (ID INTEGER NOT NULL, Name TEXT, Coach TEXT, City TEXT, PRIMARY KEY(ID));"
+		    Var SQL As String
+		    sql = "CREATE TABLE " + dbTable + " (ID INTEGER  NOT NULL,  "
+		    sql = SQL + firstLine + " TEXT, PRIMARY KEY(ID));"
+		    db.ExecuteSQL(SQL)
 		    
+		    // now add the data to the table
 		    
-		    'Var db As SQLiteDatabase = dbConnect(firstLine)
-		    db  = dbConnect(firstLine )
-		    'MessageBox("Database created.")
-		    Var dbTable As String= "Leap"
-		    addData(db,records(),firstLine,dbTable) 
+		    addData(db,records(),headings,dbTable) 
 		    'MessageBox("Data added to table.")
 		    
 		    
