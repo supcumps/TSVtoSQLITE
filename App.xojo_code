@@ -33,12 +33,15 @@ Inherits DesktopApplication
 		    End Try
 		  Else
 		    //======================================
+		    Try
+		      Var f As  New FolderItem 
+		      f = SpecialFolder.Documents.Child("LeapData").Child("MatterList.tsv")
+		      makeDatabase(f)
+		      
+		      
+		    Catch
+		    End Try
 		    
-		    Var f As  New FolderItem 
-		    f = SpecialFolder.Documents.Child("LeapData").Child("MatterList.tsv")
-		    'f = FolderItem.ShowOpenFileDialog("text/plain")
-		    
-		    makeDatabase(f)
 		    
 		  End If
 		  
@@ -136,7 +139,7 @@ Inherits DesktopApplication
 
 
 	#tag Method, Flags = &h0
-		Sub addData(db as SQLiteDatabase, records() as string, firstLine as String)
+		Sub addData(db as SQLiteDatabase, records() as string, firstLine as String, dbTable as String)
 		  
 		  
 		  Var re As New RegEx
@@ -156,33 +159,31 @@ Inherits DesktopApplication
 		  
 		  Var SQL As String = ""
 		  Var columns As String = ""
+		  Var parenthesis As String = DecodeHex("22")
 		  
 		  For x As Integer = 1 To records.count -1 // number of rows excluding  the header
 		    
 		    
-		    sql = "INSERT INTO Leap ("+ firstline + ") VALUES ("
+		    sql = "INSERT INTO "+ dbTable  + "("+ firstline + ") VALUES ("
 		    
 		    columns = records(x)
 		    // remove any addiitonal apostrophe's
 		    columns = columns.ReplaceAll("'","")
+		    
+		    columns = columns.ReplaceAll(parenthesis ,"")
 		    // now parse that to replace tabs with commas
 		    columns = re.Replace(columns)
 		    
-		    columns = "'"+ columns +"'" ///
+		    columns = "'"+ columns +"'" /// add the single quote for the sql statement
 		    
-		    // remove all double "
-		    
-		    Var rx As New RegEx 
-		    rx.SearchPattern = "x*93*"
-		    rx.ReplacementPattern = ""
-		    rx.Options.ReplaceAllMatches = True
-		    firstLine = rx.Replace(firstLine)
-		    ''message
 		    
 		    
 		    sql = sql + columns + "); " 
 		    
 		    db.ExecuteSQL(sql )
+		    //  INSERT INTO Leap(No,Client,Status,Type,Description,InstructionDate,State,StaffResp,StaffAct,StaffAssist,Credit
+		    // ) VALUES ('11111','Mr Fred Nerk','Archived','Purchase (QLD)','LEAP training matter','15/08/2017','QLD','PS','PS','PS','PS
+		    // '); 
 		    
 		  Next
 		  /////////
@@ -299,7 +300,8 @@ Inherits DesktopApplication
 		    'Var db As SQLiteDatabase = dbConnect(firstLine)
 		    db  = dbConnect(firstLine )
 		    'MessageBox("Database created.")
-		    addData(db,records(),firstLine)
+		    Var dbTable As String= "Leap"
+		    addData(db,records(),firstLine,dbTable) 
 		    'MessageBox("Data added to table.")
 		    
 		    
