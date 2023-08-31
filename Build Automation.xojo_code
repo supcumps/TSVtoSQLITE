@@ -18,7 +18,7 @@
 					; To use this script, specify the values For the two constants
 					; below With those For your app And project.
 					; XojoAppName Is the name Of the build app without the ".exe" extension.
-					#define XojoAppName            "TSVtoSQLite"
+					#define XojoAppName            "LeapData"
 					; XojoProjectName Is the name Of the project file, including its extension.
 					#define XojoProjectName        "TSVtoSQLite.xojo_project"
 					

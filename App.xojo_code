@@ -56,12 +56,8 @@ Inherits DesktopApplication
 		  End If
 		  
 		  
-		  
-		  
-		  Var w As New DesktopWindow 
-		  w.Show(mattersWIndow)
-		  
-		  
+		  Var mw As New DesktopWindow 
+		  mw.Show(mattersWIndow)
 		  
 		End Sub
 	#tag EndEvent

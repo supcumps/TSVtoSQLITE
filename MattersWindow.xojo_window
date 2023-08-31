@@ -23,7 +23,7 @@ Begin DesktopWindow MattersWindow
    Title           =   "CLC Leap Matters"
    Type            =   0
    Visible         =   True
-   Width           =   880
+   Width           =   1040
    Begin DesktopButton B_Quit
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -37,11 +37,11 @@ Begin DesktopWindow MattersWindow
       Height          =   20
       Index           =   -2147483648
       Italic          =   False
-      Left            =   780
+      Left            =   794
       LockBottom      =   True
       LockedInPosition=   False
-      LockLeft        =   False
-      LockRight       =   True
+      LockLeft        =   True
+      LockRight       =   False
       LockTop         =   False
       MacButtonStyle  =   0
       Scope           =   2
@@ -53,7 +53,7 @@ Begin DesktopWindow MattersWindow
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   80
+      Width           =   82
    End
    Begin DesktopListBox ListMembers
       AllowAutoDeactivate=   True
@@ -64,8 +64,8 @@ Begin DesktopWindow MattersWindow
       AllowRowDragging=   False
       AllowRowReordering=   True
       Bold            =   False
-      ColumnCount     =   12
-      ColumnWidths    =   "1%,	20%,*,1% , 1%, 1%,1%,1%,1%,1%,1%,1%"
+      ColumnCount     =   6
+      ColumnWidths    =   "10%,10%,*,15%, 15%"
       DefaultRowHeight=   -1
       DropIndicatorVisible=   False
       Enabled         =   True
@@ -80,7 +80,7 @@ Begin DesktopWindow MattersWindow
       HeadingIndex    =   -1
       Height          =   459
       Index           =   -2147483648
-      InitialValue    =   "ID	Matter	Client	Status	Type	Description	Date	State	Staff Resp	Staff Act.	Staff Assist.	Credit\n\n"
+      InitialValue    =   "ID	Matter	Client	Status	Type	Date\n\n"
       Italic          =   False
       Left            =   20
       LockBottom      =   True
@@ -99,114 +99,9 @@ Begin DesktopWindow MattersWindow
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   341
+      Width           =   578
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
-   End
-   Begin DesktopButton B_SearchButton
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Cancel          =   False
-      Caption         =   "Search"
-      Default         =   False
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   373
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MacButtonStyle  =   0
-      Scope           =   0
-      TabIndex        =   4
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   22
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   100
-   End
-   Begin DesktopTextField NameField
-      AllowAutoDeactivate=   True
-      AllowFocusRing  =   True
-      AllowSpellChecking=   False
-      AllowTabs       =   False
-      BackgroundColor =   &cFFFFFF
-      Bold            =   False
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Format          =   ""
-      HasBorder       =   True
-      Height          =   22
-      Hint            =   ""
-      Index           =   -2147483648
-      Italic          =   False
-      Left            =   72
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MaximumCharactersAllowed=   0
-      Password        =   False
-      ReadOnly        =   False
-      Scope           =   0
-      TabIndex        =   2
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   ""
-      TextAlignment   =   0
-      TextColor       =   &c000000
-      Tooltip         =   "Enter full or part name"
-      Top             =   20
-      Transparent     =   False
-      Underline       =   False
-      ValidationMask  =   ""
-      Visible         =   True
-      Width           =   289
-   End
-   Begin DesktopLabel Label1
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   22
-      Index           =   -2147483648
-      Italic          =   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   True
-      LockTop         =   True
-      Multiline       =   False
-      Scope           =   0
-      Selectable      =   False
-      TabIndex        =   0
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   "Name:"
-      TextAlignment   =   0
-      TextColor       =   &c000000
-      Tooltip         =   ""
-      Top             =   20
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   47
    End
    Begin DesktopButton B_DeleteRow
       AllowAutoDeactivate=   True
@@ -224,74 +119,12 @@ Begin DesktopWindow MattersWindow
       Left            =   549
       LockBottom      =   True
       LockedInPosition=   False
-      LockLeft        =   False
-      LockRight       =   True
+      LockLeft        =   True
+      LockRight       =   False
       LockTop         =   False
       MacButtonStyle  =   0
       Scope           =   0
       TabIndex        =   8
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   520
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   106
-   End
-   Begin DesktopButton clearButton
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Cancel          =   False
-      Caption         =   "Clear Search"
-      Default         =   False
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   -2147483648
-      Italic          =   False
-      Left            =   485
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MacButtonStyle  =   0
-      Scope           =   0
-      TabIndex        =   7
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   22
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   97
-   End
-   Begin DesktopButton B_EditRow
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Cancel          =   False
-      Caption         =   "Edit Row"
-      Default         =   False
-      Enabled         =   False
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   -2147483648
-      Italic          =   False
-      Left            =   420
-      LockBottom      =   True
-      LockedInPosition=   False
-      LockLeft        =   False
-      LockRight       =   True
-      LockTop         =   False
-      MacButtonStyle  =   0
-      Scope           =   0
-      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -314,11 +147,11 @@ Begin DesktopWindow MattersWindow
       Height          =   20
       Index           =   -2147483648
       Italic          =   False
-      Left            =   291
+      Left            =   424
       LockBottom      =   True
       LockedInPosition=   False
-      LockLeft        =   False
-      LockRight       =   True
+      LockLeft        =   True
+      LockRight       =   False
       LockTop         =   False
       MacButtonStyle  =   0
       Scope           =   0
@@ -346,11 +179,11 @@ Begin DesktopWindow MattersWindow
       Index           =   -2147483648
       Italic          =   False
       Left            =   678
-      LockBottom      =   False
+      LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
-      LockTop         =   True
+      LockTop         =   False
       MacButtonStyle  =   0
       Scope           =   0
       TabIndex        =   9
@@ -372,11 +205,11 @@ Begin DesktopWindow MattersWindow
       Enabled         =   False
       Height          =   459
       Index           =   -2147483648
-      Left            =   373
-      LockBottom      =   False
+      Left            =   610
+      LockBottom      =   True
       LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   True
       Scope           =   0
       TabIndex        =   11
@@ -386,7 +219,7 @@ Begin DesktopWindow MattersWindow
       Top             =   52
       Transparent     =   True
       Visible         =   True
-      Width           =   487
+      Width           =   422
       Begin DesktopTextField Credit
          AllowAutoDeactivate=   True
          AllowFocusRing  =   True
@@ -405,11 +238,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   518
-         LockBottom      =   False
+         Left            =   758
+         LockBottom      =   True
          LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
+         LockLeft        =   False
+         LockRight       =   True
          LockTop         =   True
          MaximumCharactersAllowed=   0
          Password        =   False
@@ -422,12 +255,12 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   417
+         Top             =   416
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   322
+         Width           =   256
       End
       Begin DesktopLabel L_Credit
          AllowAutoDeactivate=   True
@@ -440,11 +273,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   400
-         LockBottom      =   False
+         Left            =   683
+         LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   False
+         LockRight       =   True
          LockTop         =   True
          Multiline       =   False
          Scope           =   0
@@ -456,11 +289,11 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   419
+         Top             =   418
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   106
+         Width           =   50
       End
       Begin DesktopTextField staffAssisting
          AllowAutoDeactivate=   True
@@ -480,11 +313,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   518
-         LockBottom      =   False
+         Left            =   758
+         LockBottom      =   True
          LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
+         LockLeft        =   False
+         LockRight       =   True
          LockTop         =   True
          MaximumCharactersAllowed=   0
          Password        =   False
@@ -497,12 +330,12 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   384
+         Top             =   383
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   322
+         Width           =   256
       End
       Begin DesktopLabel L_staffAssisting
          AllowAutoDeactivate=   True
@@ -515,11 +348,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   400
-         LockBottom      =   False
+         Left            =   630
+         LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   False
+         LockRight       =   True
          LockTop         =   True
          Multiline       =   False
          Scope           =   0
@@ -531,11 +364,11 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   386
+         Top             =   385
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   106
+         Width           =   103
       End
       Begin DesktopTextField staffActing
          AllowAutoDeactivate=   True
@@ -555,11 +388,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   518
-         LockBottom      =   False
+         Left            =   758
+         LockBottom      =   True
          LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
+         LockLeft        =   False
+         LockRight       =   True
          LockTop         =   True
          MaximumCharactersAllowed=   0
          Password        =   False
@@ -572,12 +405,12 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   351
+         Top             =   350
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   322
+         Width           =   256
       End
       Begin DesktopLabel L_staffActing
          AllowAutoDeactivate=   True
@@ -590,11 +423,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   400
-         LockBottom      =   False
+         Left            =   649
+         LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   False
+         LockRight       =   True
          LockTop         =   True
          Multiline       =   False
          Scope           =   0
@@ -606,11 +439,11 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   353
+         Top             =   352
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   106
+         Width           =   84
       End
       Begin DesktopTextField staffResponsible
          AllowAutoDeactivate=   True
@@ -630,11 +463,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   518
-         LockBottom      =   False
+         Left            =   758
+         LockBottom      =   True
          LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
+         LockLeft        =   False
+         LockRight       =   True
          LockTop         =   True
          MaximumCharactersAllowed=   0
          Password        =   False
@@ -647,12 +480,12 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   318
+         Top             =   317
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   322
+         Width           =   256
       End
       Begin DesktopLabel L_RESPONSIBLE
          AllowAutoDeactivate=   True
@@ -665,11 +498,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   400
-         LockBottom      =   False
+         Left            =   621
+         LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   False
+         LockRight       =   True
          LockTop         =   True
          Multiline       =   False
          Scope           =   0
@@ -681,11 +514,11 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   320
+         Top             =   319
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   106
+         Width           =   112
       End
       Begin DesktopTextField State
          AllowAutoDeactivate=   True
@@ -705,11 +538,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   518
-         LockBottom      =   False
+         Left            =   758
+         LockBottom      =   True
          LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
+         LockLeft        =   False
+         LockRight       =   True
          LockTop         =   True
          MaximumCharactersAllowed=   0
          Password        =   False
@@ -722,12 +555,12 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   285
+         Top             =   284
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   322
+         Width           =   256
       End
       Begin DesktopLabel L_State
          AllowAutoDeactivate=   True
@@ -740,11 +573,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   400
-         LockBottom      =   False
+         Left            =   683
+         LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   False
+         LockRight       =   True
          LockTop         =   True
          Multiline       =   False
          Scope           =   0
@@ -756,11 +589,11 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   287
+         Top             =   286
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   106
+         Width           =   50
       End
       Begin DesktopTextField dateField
          AllowAutoDeactivate=   True
@@ -780,11 +613,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   518
-         LockBottom      =   False
+         Left            =   758
+         LockBottom      =   True
          LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
+         LockLeft        =   False
+         LockRight       =   True
          LockTop         =   True
          MaximumCharactersAllowed=   0
          Password        =   False
@@ -797,12 +630,12 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   252
+         Top             =   251
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   322
+         Width           =   256
       End
       Begin DesktopLabel L_dateField
          AllowAutoDeactivate=   True
@@ -815,11 +648,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   400
-         LockBottom      =   False
+         Left            =   630
+         LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   False
+         LockRight       =   True
          LockTop         =   True
          Multiline       =   False
          Scope           =   0
@@ -831,11 +664,11 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   254
+         Top             =   253
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   106
+         Width           =   103
       End
       Begin DesktopTextField Description
          AllowAutoDeactivate=   True
@@ -855,11 +688,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   518
-         LockBottom      =   False
+         Left            =   758
+         LockBottom      =   True
          LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
+         LockLeft        =   False
+         LockRight       =   True
          LockTop         =   True
          MaximumCharactersAllowed=   0
          Password        =   False
@@ -872,12 +705,12 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   219
+         Top             =   218
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   322
+         Width           =   256
       End
       Begin DesktopLabel L_Description
          AllowAutoDeactivate=   True
@@ -890,11 +723,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   400
-         LockBottom      =   False
+         Left            =   649
+         LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   False
+         LockRight       =   True
          LockTop         =   True
          Multiline       =   False
          Scope           =   0
@@ -906,11 +739,11 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   221
+         Top             =   220
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   106
+         Width           =   84
       End
       Begin DesktopTextField matterType
          AllowAutoDeactivate=   True
@@ -930,11 +763,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   518
-         LockBottom      =   False
+         Left            =   758
+         LockBottom      =   True
          LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
+         LockLeft        =   False
+         LockRight       =   True
          LockTop         =   True
          MaximumCharactersAllowed=   0
          Password        =   False
@@ -947,12 +780,12 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   186
+         Top             =   185
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   322
+         Width           =   256
       End
       Begin DesktopLabel L_matterType
          AllowAutoDeactivate=   True
@@ -965,11 +798,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   400
-         LockBottom      =   False
+         Left            =   649
+         LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   False
+         LockRight       =   True
          LockTop         =   True
          Multiline       =   False
          Scope           =   0
@@ -981,11 +814,11 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   188
+         Top             =   187
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   106
+         Width           =   84
       End
       Begin DesktopTextField Status
          AllowAutoDeactivate=   True
@@ -1005,11 +838,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   518
-         LockBottom      =   False
+         Left            =   758
+         LockBottom      =   True
          LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
+         LockLeft        =   False
+         LockRight       =   True
          LockTop         =   True
          MaximumCharactersAllowed=   0
          Password        =   False
@@ -1022,12 +855,12 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   152
+         Top             =   151
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   322
+         Width           =   256
       End
       Begin DesktopLabel L_Status
          AllowAutoDeactivate=   True
@@ -1040,11 +873,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   400
-         LockBottom      =   False
+         Left            =   661
+         LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   False
+         LockRight       =   True
          LockTop         =   True
          Multiline       =   False
          Scope           =   0
@@ -1056,11 +889,11 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   154
+         Top             =   153
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   106
+         Width           =   72
       End
       Begin DesktopTextField clientName
          AllowAutoDeactivate=   True
@@ -1080,11 +913,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   518
-         LockBottom      =   False
+         Left            =   758
+         LockBottom      =   True
          LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
+         LockLeft        =   False
+         LockRight       =   True
          LockTop         =   True
          MaximumCharactersAllowed=   0
          Password        =   False
@@ -1097,12 +930,12 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   118
+         Top             =   117
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   322
+         Width           =   256
       End
       Begin DesktopLabel L_clientName
          AllowAutoDeactivate=   True
@@ -1115,11 +948,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   400
-         LockBottom      =   False
+         Left            =   630
+         LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   False
+         LockRight       =   True
          LockTop         =   True
          Multiline       =   False
          Scope           =   0
@@ -1131,11 +964,11 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   120
+         Top             =   117
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   106
+         Width           =   103
       End
       Begin DesktopTextField matterNumber
          AllowAutoDeactivate=   True
@@ -1155,11 +988,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   518
-         LockBottom      =   False
+         Left            =   758
+         LockBottom      =   True
          LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
+         LockLeft        =   False
+         LockRight       =   True
          LockTop         =   True
          MaximumCharactersAllowed=   0
          Password        =   False
@@ -1172,12 +1005,12 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   84
+         Top             =   83
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   322
+         Width           =   256
       End
       Begin DesktopLabel L_matterNumber
          AllowAutoDeactivate=   True
@@ -1190,11 +1023,11 @@ Begin DesktopWindow MattersWindow
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   400
-         LockBottom      =   False
+         Left            =   630
+         LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   False
+         LockRight       =   True
          LockTop         =   True
          Multiline       =   False
          Scope           =   0
@@ -1206,11 +1039,11 @@ Begin DesktopWindow MattersWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   84
+         Top             =   83
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   106
+         Width           =   116
       End
    End
    Begin DesktopLabel L_TotalMatters
@@ -1224,11 +1057,11 @@ Begin DesktopWindow MattersWindow
       Index           =   -2147483648
       Italic          =   False
       Left            =   72
-      LockBottom      =   False
+      LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
-      LockTop         =   True
+      LockTop         =   False
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
@@ -1243,7 +1076,73 @@ Begin DesktopWindow MattersWindow
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   207
+      Width           =   223
+   End
+   Begin DesktopButton ClientButton
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Client Details"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   629
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      TabIndex        =   13
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   22
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   129
+   End
+   Begin DesktopSearchField SearchClients
+      Active          =   False
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowRecentItems=   False
+      AllowTabStop    =   True
+      ClearMenuItemValue=   "Clear"
+      Enabled         =   True
+      Height          =   22
+      Hint            =   "Search on Matter Nº, Client, Status, Type "
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MaximumRecentItems=   -1
+      PanelIndex      =   0
+      RecentItemsValue=   "Recent Searches"
+      Scope           =   0
+      TabIndex        =   14
+      TabPanelIndex   =   0
+      Text            =   ""
+      Tooltip         =   ""
+      Top             =   20
+      Transparent     =   False
+      Visible         =   True
+      Width           =   423
+      _mIndex         =   0
+      _mInitialParent =   ""
+      _mName          =   ""
+      _mPanelIndex    =   0
    End
 End
 #tag EndDesktopWindow
@@ -1269,6 +1168,8 @@ End
 		    db.BeginTransaction
 		  End If
 		  
+		  
+		  
 		  Var rs As RowSet
 		  
 		  If dbFile.Exists Then
@@ -1278,11 +1179,12 @@ End
 		      // populate the listbox
 		      Var columns As RowSet = db.TableColumns("Leap")
 		      Var columNames As String = ""
-		      For Each row As DatabaseRow In columns
-		        columNames  = columNames +  row.Column("ColumnName").StringValue +  Chr(9)
-		      Next
 		      
-		      listMembers.HeaderAt(listMembers.AllColumns) = columNames
+		      // if you want all column headings, uncomment the following lines 
+		      'For Each row As DatabaseRow In columns
+		      'columNames  = columNames +  row.Column("ColumnName").StringValue +  Chr(9)
+		      'Next
+		      'listMembers.HeaderAt(listMembers.AllColumns) = columNames
 		      
 		      PopulateListBox(listMembers, rs)
 		      
@@ -1293,7 +1195,8 @@ End
 		  End If 
 		  
 		  
-		  NameField.SetFocus
+		  
+		  
 		End Sub
 	#tag EndEvent
 
@@ -1305,13 +1208,13 @@ End
 		    B_AddRow.Enabled = TRUE
 		    B_DeleteRow.Enabled = TRUE
 		    B_Save.Enabled = TRUE
-		    B_EditRow.Enabled = True
+		    'B_EditRow.Enabled = True
 		  Else
 		    canvas1.Enabled = FALSE
 		    B_AddRow.Enabled = FALSE
 		    B_DeleteRow.Enabled = FALSE
 		    B_Save.Enabled = FALSE
-		    B_EditRow.Enabled = FALSE
+		    'B_EditRow.Enabled = FALSE
 		  End If
 		End Sub
 	#tag EndMethod
@@ -1337,6 +1240,41 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub populateClientData(CurrentRow as rowset)
+		  If listMembers.SelectedRowCount = 1 Then
+		    
+		    activateCanvasAndButtons(True)
+		    
+		    Try
+		      
+		      Var ID As String = listMembers.RowTagAt(listMembers.SelectedRowIndex)
+		      CurrentRow = db.SelectSQL("SELECT * FROM Leap WHERE ID = ?", ID) 
+		      
+		      matterNumber.Text = CurrentRow.Column("No").StringValue
+		      clientName.Text = CurrentRow.Column("Client").StringValue
+		      State.Text = CurrentRow.Column("State").StringValue
+		      Status.Text = CurrentRow.Column("Status").StringValue
+		      matterType.Text = CurrentRow.Column("Type").StringValue
+		      Credit.Text = CurrentRow.Column("Credit").StringValue
+		      dateField.Text =  CurrentRow.Column("InstructionDate").StringValue
+		      Description.Text = CurrentRow.Column("Description").StringValue
+		      staffActing.Text = CurrentRow.Column("StaffAct").StringValue
+		      staffAssisting.Text = CurrentRow.Column("StaffAssist").StringValue
+		      staffResponsible.Text = CurrentRow.Column("StaffResp").StringValue
+		      
+		    Catch error As DatabaseException
+		      MessageBox ("The matter details could not be loaded due to an error.")
+		    End Try
+		  Else
+		    activateCanvasAndButtons(False)
+		    clearEntryFields()
+		    currentRow = Nil // no row selected
+		  End If
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub PopulateListBox(dataList As DesktopListbox, rowsFound As RowSet)
 		  'Sub PopulateListBox(dataList As DesktopListbox, rs As RowSet)
 		  
@@ -1345,17 +1283,6 @@ End
 		  // set up listbox state for population
 		  dataList.RemoveAllRows
 		  
-		  // Add the data from the table
-		  'While Not rowsFound.AfterLastRow
-		  'dataList.AddRow("")
-		  'dataList.RowTagAt(dataList.LastAddedRowIndex) = rowsFound.Column("ID").StringValue
-		  'For i As Integer = 0 To rowsFound.LastColumnIndex
-		  'dataList.CellTextAt(dataList.LastAddedRowIndex, i) = rowsFound.ColumnAt(i).StringValue
-		  'Next
-		  '
-		  'rowsFound.MoveToNextRow
-		  'Wend
-		  
 		  
 		  For Each row As DatabaseRow In rowsFound
 		    ListMembers.AddRow(row.Column("ID").StringValue,_
@@ -1363,13 +1290,13 @@ End
 		    row.Column("Client").Stringvalue,_
 		    row.Column("Status").Stringvalue,_
 		    row.Column("Type").Stringvalue,_
-		    row.Column("Description").Stringvalue,_
-		    row.Column("InstructionDate").Stringvalue,_
-		    row.Column("State").Stringvalue,_
-		    row.Column("StaffResp").Stringvalue,_
-		    row.Column("StaffAct").Stringvalue,_
-		    row.Column("StaffAssist").Stringvalue,_
-		    row.Column("Credit").Stringvalue)
+		    row.Column("InstructionDate").Stringvalue)
+		    'row.Column("Description").Stringvalue,_
+		    'row.Column("State").Stringvalue,_
+		    'row.Column("StaffResp").Stringvalue,_
+		    'row.Column("StaffAct").Stringvalue,_
+		    'row.Column("StaffAssist").Stringvalue,_
+		    'row.Column("Credit").Stringvalue)
 		    
 		    ListMembers.RowTagAt(ListMembers.LastAddedRowIndex)=row.Column("ID").StringValue
 		  Next
@@ -1384,9 +1311,12 @@ End
 		  
 		  Var sql As String = "SELECT * FROM Leap "
 		  
-		  If NameField.Text <> "" Then   // create the WHERE clause to isolate records matching the search field
-		    sql = sql + "WHERE LOWER(No) LIKE LOWER('%" + SQLify(NameField.Text) + "%') "
-		    sql = sql + "OR LOWER(CLIENT) LIKE LOWER('%" + SQLify(NameField.Text) + "%') "
+		  If SearchClients.Text <> "" Then   // create the WHERE clause to isolate records matching the search field
+		    sql = sql + "WHERE LOWER(No) LIKE LOWER('%" + SQLify(SearchClients.Text) + "%') "
+		    sql = sql + "OR LOWER(CLIENT) LIKE LOWER('%" + SQLify(SearchClients.Text) + "%') "
+		    sql = sql + "OR LOWER(Type) LIKE LOWER('%" + SQLify(SearchClients.Text) + "%') "
+		    sql = sql + "OR LOWER(Status) LIKE LOWER('%" + SQLify(SearchClients.Text) + "%') "
+		    
 		    
 		  Else
 		    
@@ -1407,15 +1337,10 @@ End
 		  // clear the data entry fields
 		  clearEntryFields()
 		  
+		  
+		  ////////
+		  
 		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Function SQLify(Source As String) As String
-		  Var result As String
-		  result = ReplaceAll(Source,"'","''")
-		  Return result
-		End Function
 	#tag EndMethod
 
 
@@ -1482,44 +1407,40 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub SelectionChanged()
-		  If Me.SelectedRowCount = 1 Then
-		    
-		    activateCanvasAndButtons(True)
-		    
-		    Try
-		      
-		      Var ID As String = Me.RowTagAt(Me.SelectedRowIndex)
-		      CurrentRow = db.SelectSQL("SELECT * FROM Leap WHERE ID = ?", ID) 
-		      
-		      matterNumber.Text = CurrentRow.Column("No").StringValue
-		      clientName.Text = CurrentRow.Column("Client").StringValue
-		      State.Text = CurrentRow.Column("State").StringValue
-		      Status.Text = CurrentRow.Column("Status").StringValue
-		      matterType.Text = CurrentRow.Column("Type").StringValue
-		      Credit.Text = CurrentRow.Column("Credit").StringValue
-		      dateField.Text =  CurrentRow.Column("InstructionDate").StringValue
-		      Description.Text = CurrentRow.Column("Description").StringValue
-		      staffActing.Text = CurrentRow.Column("StaffAct").StringValue
-		      staffAssisting.Text = CurrentRow.Column("StaffAssist").StringValue
-		      staffResponsible.Text = CurrentRow.Column("StaffResp").StringValue
-		      
-		    Catch error As DatabaseException
-		      MessageBox ("The matter details could not be loaded due to an error.")
-		    End Try
-		  Else
-		    activateCanvasAndButtons(False)
-		    clearEntryFields()
-		    currentRow = Nil // no row selected
-		  End If
+		  'If Me.SelectedRowCount = 1 Then
+		  '
+		  'activateCanvasAndButtons(True)
+		  '
+		  'Try
+		  '
+		  'Var ID As String = Me.RowTagAt(Me.SelectedRowIndex)
+		  'CurrentRow = db.SelectSQL("SELECT * FROM Leap WHERE ID = ?", ID) 
+		  '
+		  'matterNumber.Text = CurrentRow.Column("No").StringValue
+		  'clientName.Text = CurrentRow.Column("Client").StringValue
+		  'State.Text = CurrentRow.Column("State").StringValue
+		  'Status.Text = CurrentRow.Column("Status").StringValue
+		  'matterType.Text = CurrentRow.Column("Type").StringValue
+		  'Credit.Text = CurrentRow.Column("Credit").StringValue
+		  'dateField.Text =  CurrentRow.Column("InstructionDate").StringValue
+		  'Description.Text = CurrentRow.Column("Description").StringValue
+		  'staffActing.Text = CurrentRow.Column("StaffAct").StringValue
+		  'staffAssisting.Text = CurrentRow.Column("StaffAssist").StringValue
+		  'staffResponsible.Text = CurrentRow.Column("StaffResp").StringValue
+		  '
+		  'Catch error As DatabaseException
+		  'MessageBox ("The matter details could not be loaded due to an error.")
+		  'End Try
+		  'Else
+		  'activateCanvasAndButtons(False)
+		  'clearEntryFields()
+		  'currentRow = Nil // no row selected
+		  'End If
 		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events B_SearchButton
-	#tag Event
-		Sub Pressed()
-		  newRow = False
-		  resetSearch()
+		  
+		  Var ID As String = Me.RowTagAt(Me.SelectedRowIndex)
+		  CurrentRow = db.SelectSQL("SELECT * FROM Leap WHERE ID = ?", ID) 
+		  populateClientData(CurrentRow)
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1536,26 +1457,9 @@ End
 		    
 		  End If
 		  
-		  resetSearch()
+		  'resetSearch()
 		  
 		  // need to remove the folferitem as well/???
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events clearButton
-	#tag Event
-		Function MouseDown(x As Integer, y As Integer) As Boolean
-		  NameField.Text = ""
-		  B_SearchButton.SetFocus
-		  clearEntryFields()
-		  resetSearch()
-		End Function
-	#tag EndEvent
-#tag EndEvents
-#tag Events B_EditRow
-	#tag Event
-		Sub Pressed()
-		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1618,6 +1522,57 @@ End
 		  End Try
 		  
 		  resetSearch()
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ClientButton
+	#tag Event
+		Sub Pressed()
+		  
+		  Var cw As New DesktopWindow 
+		  cw.Show(clientWIndow)
+		  
+		  
+		  
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events SearchClients
+	#tag Event
+		Sub TextChanged()
+		  ListMembers.RemoveAllRows
+		  
+		  Var rs As rowset
+		  
+		  Var sql As String = "SELECT * FROM Leap "
+		  
+		  If SearchClients.Text <> "" Then   // create the WHERE clause to isolate records matching the search field
+		    sql = sql + "WHERE LOWER(No) LIKE LOWER('%" + SQLify(SearchClients.Text) + "%') "
+		    sql = sql + "OR LOWER(CLIENT) LIKE LOWER('%" + SQLify(SearchClients.Text) + "%') "
+		    sql = sql + "OR LOWER(Type) LIKE LOWER('%" + SQLify(SearchClients.Text) + "%') "
+		    sql = sql + "OR LOWER(Status) LIKE LOWER('%" + SQLify(SearchClients.Text) + "%') "
+		    
+		  Else
+		    
+		  End If
+		  sql = sql + " ORDER BY Client ASC "  // client displayed with increasing alphabet order
+		  
+		  Try
+		    rs = db.SelectSQL(SQL)
+		    // populate the listbox - pass name of lisbox and recordset to use
+		    PopulateListBox(listMembers, rs)
+		  Catch error As DatabaseException
+		    System.Beep
+		    MessageBox("Unable to complete the search and populate the list box")
+		  End Try
+		  
+		  // clear the data entry fields
+		  clearEntryFields()
+		  
+		  
 		  
 		End Sub
 	#tag EndEvent

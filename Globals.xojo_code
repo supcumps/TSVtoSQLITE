@@ -1,7 +1,24 @@
 #tag Module
 Protected Module Globals
+	#tag Method, Flags = &h0
+		Function SQLify(Source As String) As String
+		  Var result As String
+		  result = ReplaceAll(Source,"'","''")
+		  Return result
+		End Function
+	#tag EndMethod
+
+
 	#tag Property, Flags = &h0
 		appDebug As boolean = FALSE
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		ClientName As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		currentRow As RowSet
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
@@ -76,6 +93,14 @@ Protected Module Globals
 			Group="Behavior"
 			InitialValue=""
 			Type="Boolean"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="appDebug"
+			Visible=false
+			Group="Behavior"
+			InitialValue="FALSE"
+			Type="boolean"
 			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
