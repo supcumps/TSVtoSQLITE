@@ -27,7 +27,6 @@ Inherits DesktopApplication
 		      db.Connect
 		      'db.WriteAheadLogging = True
 		      'MessageBox("Connected to database from app opening")
-		      
 		    Catch error As DatabaseException
 		      MessageBox("Connection error: " + error.Message)
 		    End Try
@@ -36,6 +35,7 @@ Inherits DesktopApplication
 		    
 		    Try
 		      db.CreateDatabase    // if successful, creates and opens the databse
+		      
 		    Catch error As IOException
 		      MessageBox("The database file could not be created: " + error.Message)
 		    End Try
@@ -47,6 +47,10 @@ Inherits DesktopApplication
 		      
 		      f = SpecialFolder.Documents.Child("LeapData").Child("ClientDetails.tsv")
 		      makeDatabaseTable(f,"Client")
+		      
+		      f = SpecialFolder.Documents.Child("LeapData").Child("DocumentRegister.tsv")
+		      makeDatabaseTable(f,"Documents")
+		      
 		    Catch error As DatabaseException
 		      MessageBox("Unable to create table " + error.message)
 		    End Try

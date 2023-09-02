@@ -120,7 +120,7 @@ Begin DesktopWindow ClientWindow
       Height          =   20
       Index           =   -2147483648
       Italic          =   False
-      Left            =   656
+      Left            =   856
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -800,7 +800,7 @@ Begin DesktopWindow ClientWindow
             Visible         =   True
             Width           =   80
          End
-         Begin DesktopLabel Label4
+         Begin DesktopLabel L_Work
             AllowAutoDeactivate=   True
             Bold            =   False
             Enabled         =   True
@@ -1980,6 +1980,68 @@ Begin DesktopWindow ClientWindow
          Width           =   82
       End
    End
+   Begin DesktopButton AddNewButton
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Add New"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   417
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   6
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   446
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin DesktopButton SaveButton
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Save"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   662
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   7
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   446
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
 End
 #tag EndDesktopWindow
 
@@ -2172,6 +2234,77 @@ End
 		    'clearEntryFields()
 		    currentRow = Nil // no row selected
 		  End If
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events SaveButton
+	#tag Event
+		Sub Pressed()
+		  
+		  Try
+		    If newRow Then
+		      Var row As New DatabaseRow
+		      row.Column("ABN").StringValue = ABN.Text 
+		      row.Column("BuildingName").StringValue = BuildingName.Text
+		      row.Column("ClientName").StringValue = ClientName.Text 
+		      row.Column("Country").StringValue = Country.Text
+		      row.Column("DateOfBirth").StringValue = DateOfBirth.Text
+		      row.Column("Fax").StringValue = Fax.Text
+		      row.Column("FirstEmailAddress").StringValue = FirstEmailAddress.Text  
+		      row.Column("Mobile").StringValue = Mobile.Text 
+		      row.Column("Number").StringValue = Number.Text 
+		      row.Column("Phone").StringValue = Phone.Text 
+		      row.Column("POBoxCountry").StringValue = POBoxCountry.Text 
+		      row.Column("POBoxNumber").StringValue = POBoxNumber.Text 
+		      row.Column("POBoxPostCode").StringValue = POBoxPostCode.Text 
+		      row.Column("POBoxState").StringValue = POBoxState.Text 
+		      row.Column("POBoxSuburb").StringValue = POBoxSuburb.Text 
+		      row.Column("POBoxType").StringValue = POBoxType.Text 
+		      row.Column("Postcode").StringValue = Postcode.Text 
+		      row.Column("State").StringValue = POBoxCountry.Text 
+		      row.Column("Street").StringValue = Street.Text 
+		      row.Column("StreetLevel").StringValue = StreetLevel.Text 
+		      row.Column("Suburb").StringValue = Suburb.Text 
+		      row.Column("Work").StringValue = Work.Text 
+		      '
+		      
+		      newRow = False
+		    Else
+		      
+		      currentRow.EditRow
+		      
+		      currentRow.Column("ABN").StringValue = ABN.Text 
+		      currentRow.Column("BuildingName").StringValue = BuildingName.Text
+		      currentRow.Column("ClientName").StringValue = ClientName.Text 
+		      currentRow.Column("Country").StringValue = Country.Text
+		      currentRow.Column("DateOfBirth").StringValue = DateOfBirth.Text
+		      currentRow.Column("Fax").StringValue = Fax.Text
+		      currentRow.Column("FirstEmailAddress").StringValue = FirstEmailAddress.Text  
+		      currentRow.Column("Mobile").StringValue = Mobile.Text 
+		      currentRow.Column("Number").StringValue = Number.Text 
+		      currentRow.Column("Phone").StringValue = Phone.Text 
+		      currentRow.Column("POBoxCountry").StringValue = POBoxCountry.Text 
+		      currentRow.Column("POBoxNumber").StringValue = POBoxNumber.Text 
+		      currentRow.Column("POBoxPostCode").StringValue = POBoxPostCode.Text 
+		      currentRow.Column("POBoxState").StringValue = POBoxState.Text 
+		      currentRow.Column("POBoxSuburb").StringValue = POBoxSuburb.Text 
+		      currentRow.Column("POBoxType").StringValue = POBoxType.Text 
+		      currentRow.Column("Postcode").StringValue = Postcode.Text 
+		      currentRow.Column("State").StringValue = POBoxCountry.Text 
+		      currentRow.Column("Street").StringValue = Street.Text 
+		      currentRow.Column("StreetLevel").StringValue = StreetLevel.Text 
+		      currentRow.Column("Suburb").StringValue = Suburb.Text 
+		      currentRow.Column("Work").StringValue = Work.Text 
+		      '
+		      
+		      currentRow.SaveRow
+		    End If
+		  Catch error As DatabaseException
+		    MessageBox ("The matter details could not be saved due to an error.")
+		  End Try
+		  
+		  'resetSearch()
 		  
 		End Sub
 	#tag EndEvent
