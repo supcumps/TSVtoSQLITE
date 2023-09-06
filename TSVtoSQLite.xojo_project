@@ -3,6 +3,7 @@ RBProjectVersion=2023.02
 MinIDEVersion=20210300
 OrigIDEVersion=20230200
 Class=App;App.xojo_code;&h00000000777C3FFF;&h0000000000000000;false
+DesktopToolbar=Toolbar1;Toolbar1.xojo_toolbar;&h0000000044EF57FF;&h0000000000000000;false
 Folder=Windows;Windows;&h000000000E4627FF;&h0000000000000000;false
 DesktopWindow=ArchivedMattersWindow;Windows/ArchivedMattersWindow.xojo_window;&h000000005ACB17FF;&h000000000E4627FF;false
 DesktopWindow=DocumentsRegisterWindow;Windows/DocumentsRegisterWindow.xojo_window;&h0000000032449FFF;&h000000000E4627FF;false

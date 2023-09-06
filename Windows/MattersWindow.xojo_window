@@ -10,7 +10,7 @@ Begin DesktopWindow MattersWindow
    HasFullScreenButton=   True
    HasMaximizeButton=   True
    HasMinimizeButton=   True
-   Height          =   560
+   Height          =   514
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   3200
@@ -23,7 +23,7 @@ Begin DesktopWindow MattersWindow
    Title           =   "CLC Leap Matters"
    Type            =   0
    Visible         =   True
-   Width           =   1040
+   Width           =   1038
    Begin DesktopButton B_Quit
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -49,7 +49,7 @@ Begin DesktopWindow MattersWindow
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   520
+      Top             =   474
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -78,7 +78,7 @@ Begin DesktopWindow MattersWindow
       HasHorizontalScrollbar=   True
       HasVerticalScrollbar=   True
       HeadingIndex    =   -1
-      Height          =   459
+      Height          =   413
       Index           =   -2147483648
       InitialValue    =   "Matter	Client	Type	Date\n\n"
       Italic          =   False
@@ -99,7 +99,7 @@ Begin DesktopWindow MattersWindow
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   578
+      Width           =   576
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End
@@ -128,7 +128,7 @@ Begin DesktopWindow MattersWindow
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   520
+      Top             =   474
       Transparent     =   False
       Underline       =   False
       Visible         =   False
@@ -159,7 +159,7 @@ Begin DesktopWindow MattersWindow
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   520
+      Top             =   474
       Transparent     =   False
       Underline       =   False
       Visible         =   False
@@ -190,7 +190,7 @@ Begin DesktopWindow MattersWindow
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   520
+      Top             =   474
       Transparent     =   False
       Underline       =   False
       Visible         =   False
@@ -203,9 +203,9 @@ Begin DesktopWindow MattersWindow
       AllowTabs       =   False
       Backdrop        =   0
       Enabled         =   False
-      Height          =   459
+      Height          =   413
       Index           =   -2147483648
-      Left            =   610
+      Left            =   606
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   False
@@ -219,7 +219,7 @@ Begin DesktopWindow MattersWindow
       Top             =   52
       Transparent     =   True
       Visible         =   True
-      Width           =   422
+      Width           =   424
       Begin DesktopTextField Credit
          AllowAutoDeactivate=   True
          AllowFocusRing  =   True
@@ -233,13 +233,13 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Format          =   ""
          HasBorder       =   True
-         Height          =   22
+         Height          =   24
          Hint            =   ""
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   758
-         LockBottom      =   True
+         Left            =   756
+         LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
@@ -269,14 +269,14 @@ Begin DesktopWindow MattersWindow
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Height          =   22
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   683
-         LockBottom      =   True
+         Left            =   681
+         LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   True
+         LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
          Multiline       =   False
@@ -308,13 +308,13 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Format          =   ""
          HasBorder       =   True
-         Height          =   22
+         Height          =   24
          Hint            =   ""
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   758
-         LockBottom      =   True
+         Left            =   756
+         LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
@@ -344,14 +344,14 @@ Begin DesktopWindow MattersWindow
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Height          =   22
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   630
-         LockBottom      =   True
+         Left            =   628
+         LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   True
+         LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
          Multiline       =   False
@@ -383,13 +383,13 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Format          =   ""
          HasBorder       =   True
-         Height          =   22
+         Height          =   24
          Hint            =   ""
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   758
-         LockBottom      =   True
+         Left            =   756
+         LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
@@ -419,14 +419,14 @@ Begin DesktopWindow MattersWindow
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Height          =   22
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   649
-         LockBottom      =   True
+         Left            =   647
+         LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   True
+         LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
          Multiline       =   False
@@ -458,13 +458,13 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Format          =   ""
          HasBorder       =   True
-         Height          =   22
+         Height          =   24
          Hint            =   ""
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   758
-         LockBottom      =   True
+         Left            =   756
+         LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
@@ -494,14 +494,14 @@ Begin DesktopWindow MattersWindow
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Height          =   22
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   621
-         LockBottom      =   True
+         Left            =   619
+         LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   True
+         LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
          Multiline       =   False
@@ -533,13 +533,13 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Format          =   ""
          HasBorder       =   True
-         Height          =   22
+         Height          =   24
          Hint            =   ""
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   758
-         LockBottom      =   True
+         Left            =   756
+         LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
@@ -569,14 +569,14 @@ Begin DesktopWindow MattersWindow
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Height          =   22
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   683
-         LockBottom      =   True
+         Left            =   681
+         LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   True
+         LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
          Multiline       =   False
@@ -608,13 +608,13 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Format          =   ""
          HasBorder       =   True
-         Height          =   22
+         Height          =   24
          Hint            =   ""
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   758
-         LockBottom      =   True
+         Left            =   756
+         LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
@@ -644,14 +644,14 @@ Begin DesktopWindow MattersWindow
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Height          =   22
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   630
-         LockBottom      =   True
+         Left            =   628
+         LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   True
+         LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
          Multiline       =   False
@@ -683,13 +683,13 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Format          =   ""
          HasBorder       =   True
-         Height          =   22
+         Height          =   24
          Hint            =   ""
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   758
-         LockBottom      =   True
+         Left            =   756
+         LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
@@ -719,14 +719,14 @@ Begin DesktopWindow MattersWindow
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Height          =   22
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   649
-         LockBottom      =   True
+         Left            =   647
+         LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   True
+         LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
          Multiline       =   False
@@ -758,13 +758,13 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Format          =   ""
          HasBorder       =   True
-         Height          =   22
+         Height          =   24
          Hint            =   ""
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   758
-         LockBottom      =   True
+         Left            =   756
+         LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
@@ -794,14 +794,14 @@ Begin DesktopWindow MattersWindow
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Height          =   22
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   649
-         LockBottom      =   True
+         Left            =   647
+         LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   True
+         LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
          Multiline       =   False
@@ -833,13 +833,13 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Format          =   ""
          HasBorder       =   True
-         Height          =   22
+         Height          =   24
          Hint            =   ""
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   758
-         LockBottom      =   True
+         Left            =   756
+         LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
@@ -869,14 +869,14 @@ Begin DesktopWindow MattersWindow
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Height          =   22
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   661
-         LockBottom      =   True
+         Left            =   659
+         LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   True
+         LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
          Multiline       =   False
@@ -908,13 +908,13 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Format          =   ""
          HasBorder       =   True
-         Height          =   22
+         Height          =   24
          Hint            =   ""
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   758
-         LockBottom      =   True
+         Left            =   756
+         LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
@@ -944,14 +944,14 @@ Begin DesktopWindow MattersWindow
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Height          =   22
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   630
-         LockBottom      =   True
+         Left            =   628
+         LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   True
+         LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
          Multiline       =   False
@@ -983,13 +983,13 @@ Begin DesktopWindow MattersWindow
          FontUnit        =   0
          Format          =   ""
          HasBorder       =   True
-         Height          =   22
+         Height          =   24
          Hint            =   ""
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   758
-         LockBottom      =   True
+         Left            =   756
+         LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
@@ -1019,14 +1019,14 @@ Begin DesktopWindow MattersWindow
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   20
+         Height          =   22
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   630
-         LockBottom      =   True
+         Left            =   628
+         LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   True
+         LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
          Multiline       =   False
@@ -1072,7 +1072,7 @@ Begin DesktopWindow MattersWindow
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   520
+      Top             =   474
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -1236,6 +1236,14 @@ Begin DesktopWindow MattersWindow
       Underline       =   False
       Visible         =   True
       Width           =   80
+   End
+   Begin Toolbar1 Toolbar11
+      Enabled         =   True
+      Index           =   -2147483648
+      LockedInPosition=   False
+      Scope           =   2
+      TabPanelIndex   =   0
+      Visible         =   True
    End
 End
 #tag EndDesktopWindow
@@ -1712,6 +1720,26 @@ End
 		  
 		  
 		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events Toolbar11
+	#tag Event
+		Sub Opening()
+		  Me.RemoveButtonAt(6)
+		  me.RemoveButtonAt(5)
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Pressed(item As DesktopToolbarItem)
+		  Var button As DesktopToolbaritem = item
+		  
+		  Select Case button.Name
+		  Case "MattersButton"
+		    MessageBox("You selected  Matters")
+		  Case "ClientsButton"
+		    MessageBox("You selected  Clients")
+		  End Select
 		End Sub
 	#tag EndEvent
 #tag EndEvents
