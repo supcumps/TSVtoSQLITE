@@ -65,7 +65,7 @@ Begin DesktopWindow MattersWindow
       AllowRowReordering=   True
       Bold            =   False
       ColumnCount     =   4
-      ColumnWidths    =   "10%,35%,40%,15%"
+      ColumnWidths    =   "15%,35%,35%,15%"
       DefaultRowHeight=   -1
       DropIndicatorVisible=   False
       Enabled         =   True
@@ -1118,7 +1118,7 @@ Begin DesktopWindow MattersWindow
       ClearMenuItemValue=   "Clear"
       Enabled         =   True
       Height          =   22
-      Hint            =   "Search on Matter Nº, Client, Status, Type "
+      Hint            =   "Search on Matter Nº, Client, Type "
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   21

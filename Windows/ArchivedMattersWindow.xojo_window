@@ -1005,7 +1005,6 @@ End
 		    ListMembers.AddRow(row.Column("Client").Stringvalue,_
 		    row.Column("Description").Stringvalue)
 		    
-		    
 		    ListMembers.RowTagAt(ListMembers.LastAddedRowIndex)=row.Column("ID").StringValue
 		  Next
 		  L_TotalMatters.Text = ("Total archives = " +  ListMembers.RowCount.ToString)

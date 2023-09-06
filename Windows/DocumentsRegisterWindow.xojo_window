@@ -33,8 +33,8 @@ Begin DesktopWindow DocumentsRegisterWindow
       AllowRowDragging=   False
       AllowRowReordering=   False
       Bold            =   False
-      ColumnCount     =   3
-      ColumnWidths    =   "30%,*,20%"
+      ColumnCount     =   2
+      ColumnWidths    =   "40%,60%"
       DefaultRowHeight=   -1
       DropIndicatorVisible=   False
       Enabled         =   True
@@ -49,9 +49,9 @@ Begin DesktopWindow DocumentsRegisterWindow
       HeadingIndex    =   -1
       Height          =   533
       Index           =   -2147483648
-      InitialValue    =   "ClientNo	Description	DocType\n"
+      InitialValue    =   "Client	Description\n"
       Italic          =   False
-      Left            =   39
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -68,7 +68,7 @@ Begin DesktopWindow DocumentsRegisterWindow
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   370
+      Width           =   389
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End
@@ -94,7 +94,7 @@ Begin DesktopWindow DocumentsRegisterWindow
       TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Total Archives:"
+      Text            =   "Total Douments:"
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
@@ -104,7 +104,7 @@ Begin DesktopWindow DocumentsRegisterWindow
       Visible         =   True
       Width           =   247
    End
-   Begin DesktopSearchField SearchArchives
+   Begin DesktopSearchField SearchDocuments
       Active          =   False
       AllowAutoDeactivate=   True
       AllowFocusRing  =   True
@@ -201,7 +201,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   140
+         Top             =   134
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
@@ -243,7 +243,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   190
+         Top             =   178
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
@@ -268,7 +268,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          Index           =   -2147483648
          InitialParent   =   "GroupBox1"
          Italic          =   False
-         Left            =   542
+         Left            =   516
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -285,12 +285,12 @@ Begin DesktopWindow DocumentsRegisterWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   238
+         Top             =   267
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   89
+         Width           =   81
       End
       Begin DesktopTextField PacketNo
          AllowAutoDeactivate=   True
@@ -327,12 +327,12 @@ Begin DesktopWindow DocumentsRegisterWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   290
+         Top             =   310
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   153
+         Width           =   82
       End
       Begin DesktopTextField DocumentNo
          AllowAutoDeactivate=   True
@@ -352,7 +352,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          Index           =   -2147483648
          InitialParent   =   "GroupBox1"
          Italic          =   False
-         Left            =   542
+         Left            =   516
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -369,12 +369,12 @@ Begin DesktopWindow DocumentsRegisterWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   340
+         Top             =   353
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   153
+         Width           =   84
       End
       Begin DesktopTextField DocType
          AllowAutoDeactivate=   True
@@ -394,7 +394,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          Index           =   -2147483648
          InitialParent   =   "GroupBox1"
          Italic          =   False
-         Left            =   598
+         Left            =   516
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -411,12 +411,12 @@ Begin DesktopWindow DocumentsRegisterWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   388
+         Top             =   396
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   82
+         Width           =   312
       End
       Begin DesktopTextField DocRemoved
          AllowAutoDeactivate=   True
@@ -458,7 +458,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   312
+         Width           =   87
       End
       Begin DesktopLabel L_DocumentNo
          AllowAutoDeactivate=   True
@@ -471,7 +471,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          Index           =   -2147483648
          InitialParent   =   "GroupBox1"
          Italic          =   False
-         Left            =   422
+         Left            =   427
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -487,7 +487,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   340
+         Top             =   353
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -504,7 +504,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          Index           =   -2147483648
          InitialParent   =   "GroupBox1"
          Italic          =   False
-         Left            =   422
+         Left            =   427
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -526,39 +526,6 @@ Begin DesktopWindow DocumentsRegisterWindow
          Visible         =   True
          Width           =   82
       End
-      Begin DesktopLabel L_DocType
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Height          =   20
-         Index           =   -2147483648
-         InitialParent   =   "GroupBox1"
-         Italic          =   False
-         Left            =   422
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   2
-         Selectable      =   False
-         TabIndex        =   12
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   "Document Type"
-         TextAlignment   =   3
-         TextColor       =   &c000000
-         Tooltip         =   ""
-         Top             =   390
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   108
-      End
       Begin DesktopLabel L_ClientNo
          AllowAutoDeactivate=   True
          Bold            =   False
@@ -570,7 +537,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          Index           =   -2147483648
          InitialParent   =   "GroupBox1"
          Italic          =   False
-         Left            =   422
+         Left            =   427
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -582,7 +549,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          TabIndex        =   13
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Client Nº"
+         Text            =   "Client"
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
@@ -603,7 +570,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          Index           =   -2147483648
          InitialParent   =   "GroupBox1"
          Italic          =   False
-         Left            =   422
+         Left            =   427
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -619,7 +586,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   290
+         Top             =   310
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -636,7 +603,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          Index           =   -2147483648
          InitialParent   =   "GroupBox1"
          Italic          =   False
-         Left            =   422
+         Left            =   434
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -648,15 +615,15 @@ Begin DesktopWindow DocumentsRegisterWindow
          TabIndex        =   15
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Document Date"
+         Text            =   "Doc. Date"
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   240
+         Top             =   266
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   108
+         Width           =   75
       End
       Begin DesktopLabel L_DocNo
          AllowAutoDeactivate=   True
@@ -669,7 +636,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          Index           =   -2147483648
          InitialParent   =   "GroupBox1"
          Italic          =   False
-         Left            =   422
+         Left            =   427
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -685,7 +652,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   190
+         Top             =   178
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -702,7 +669,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          Index           =   -2147483648
          InitialParent   =   "GroupBox1"
          Italic          =   False
-         Left            =   422
+         Left            =   427
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -718,7 +685,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   140
+         Top             =   134
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -735,7 +702,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          Index           =   -2147483648
          InitialParent   =   "GroupBox1"
          Italic          =   False
-         Left            =   610
+         Left            =   427
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -751,7 +718,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          TextAlignment   =   3
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   190
+         Top             =   222
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -775,7 +742,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          Index           =   -2147483648
          InitialParent   =   "GroupBox1"
          Italic          =   False
-         Left            =   704
+         Left            =   516
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -792,7 +759,7 @@ Begin DesktopWindow DocumentsRegisterWindow
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   190
+         Top             =   222
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
@@ -839,7 +806,40 @@ Begin DesktopWindow DocumentsRegisterWindow
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   164
+         Width           =   312
+      End
+      Begin DesktopLabel L_DocType
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "GroupBox1"
+         Italic          =   False
+         Left            =   471
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   2
+         Selectable      =   False
+         TabIndex        =   20
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "Type"
+         TextAlignment   =   3
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   396
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   38
       End
    End
    Begin DesktopButton Button1
@@ -927,15 +927,15 @@ End
 		  
 		  
 		  For Each row As DatabaseRow In rowsFound
-		    ListMembers.AddRow(row.Column("ClientNo").Stringvalue,_
-		    row.Column("DocType").Stringvalue),_
-		    row.Column("Description").Stringvalue),_
 		    
+		    ListMembers.AddRow(row.Column("ClientNo").StringValue,_
+		    row.Column("Description").Stringvalue,_
+		    row.Column("DocType").Stringvalue)
 		    
 		    ListMembers.RowTagAt(ListMembers.LastAddedRowIndex)=row.Column("ID").StringValue
 		  Next
-		  L_TotalMatters.Text = ("Total archives = " +  ListMembers.RowCount.ToString)
 		  
+		  L_TotalMatters.Text = ("Total Douments Registered = " +  ListMembers.RowCount.ToString)
 		  
 		  
 		  
@@ -951,8 +951,8 @@ End
 		  Var sql As String = "SELECT * FROM Documents "
 		  
 		  If SearchDocuments.Text <> "" Then   // create the WHERE clause to isolate records matching the search field
-		    sql = sql + "WHERE LOWER(Client) LIKE LOWER('%" + SQLify(SearchArchives.Text) + "%') "
-		    sql = sql +  "OR LOWER(Description) LIKE LOWER('%" + SQLify(SearchArchives.Text) + "%') "
+		    sql = sql + "WHERE LOWER(ClientNo) LIKE LOWER('%" + SQLify(SearchDocuments.Text) + "%') "
+		    sql = sql +  "OR LOWER(Description) LIKE LOWER('%" + SQLify(SearchDocuments.Text) + "%') "
 		  Else
 		    
 		  End If
@@ -989,18 +989,17 @@ End
 		    '
 		    Try
 		      Var ID As String = Me.RowTagAt(Me.SelectedRowIndex)
-		      CurrentRow = db.SelectSQL("SELECT * FROM Archives WHERE ID = ?", ID) 
+		      CurrentRow = db.SelectSQL("SELECT * FROM Documents WHERE ID = ?", ID) 
 		      
-		      Client.Text = CurrentRow.Column("Client").StringValue
-		      ArchivedNo.Text =  CurrentRow.Column("ArchivedNo").StringValue
-		      ArchiveDate.Text =  CurrentRow.Column("ArchiveDate").StringValue
-		      No.Text =  CurrentRow.Column("No").StringValue
+		      DocumentDate.Text = CurrentRow.Column("DocumentDate").StringValue
+		      Received.Text =  CurrentRow.Column("Received").StringValue
+		      DocNo.Text =  CurrentRow.Column("DocNo").StringValue
+		      PacketNo.Text  =  CurrentRow.Column("PacketNo").StringValue
+		      ClientNo.Text  =  CurrentRow.Column("ClientNo").StringValue
+		      DocumentNo.Text  =  CurrentRow.Column("DocumentNo").StringValue
+		      DocType.Text =  CurrentRow.Column("DocType").StringValue
 		      Description.Text  =  CurrentRow.Column("Description").StringValue
-		      Resp.Text  =  CurrentRow.Column("Resp").StringValue
-		      Act.Text  =  CurrentRow.Column("Act").StringValue
-		      BoxNo.text =  CurrentRow.Column("BoxNo").StringValue
-		      FileLocation.Text  =  CurrentRow.Column("FileLocation").StringValue
-		      DateofDestruction.Text  =  CurrentRow.Column("DateofDestruction").StringValue
+		      DocRemoved.Text  =  CurrentRow.Column("DocRemoved").StringValue
 		      
 		    Catch error As DatabaseException
 		      MessageBox ("The matter details could not be loaded due to an error.")
@@ -1012,13 +1011,31 @@ End
 		  End If
 		  
 		  
+		  
+		  
+		  '
+		  'DocumentDate
+		  'Received
+		  'DocNo
+		  'PacketNo
+		  'ClientNo
+		  'DocumentNo
+		  'DocType
+		  'Description
+		  'DocRemoved
+		  
+		  
+		  
+		  
+		  
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events SearchArchives
+#tag Events SearchDocuments
 	#tag Event
 		Sub TextChanged()
-		  SearchForArchives()
+		  SearchForDocuments()
 		End Sub
 	#tag EndEvent
 #tag EndEvents
