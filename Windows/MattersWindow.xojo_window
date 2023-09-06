@@ -1725,11 +1725,6 @@ End
 #tag EndEvents
 #tag Events Toolbar11
 	#tag Event
-		Sub Opening()
-		  
-		End Sub
-	#tag EndEvent
-	#tag Event
 		Sub Pressed(item As DesktopToolbarItem)
 		  Var button As DesktopToolbaritem = item
 		  

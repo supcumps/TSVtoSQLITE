@@ -63,8 +63,8 @@ Inherits DesktopApplication
 		  End If
 		  
 		  
-		  Var mw As New DesktopWindow 
-		  mw.Show(mattersWIndow)
+		  Var ldw As New DesktopWindow 
+		  ldw.Show(LeapDataWIndow)
 		  
 		End Sub
 	#tag EndEvent
