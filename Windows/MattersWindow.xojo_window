@@ -1726,8 +1726,7 @@ End
 #tag Events Toolbar11
 	#tag Event
 		Sub Opening()
-		  Me.RemoveButtonAt(6)
-		  me.RemoveButtonAt(5)
+		  
 		End Sub
 	#tag EndEvent
 	#tag Event
@@ -1737,9 +1736,25 @@ End
 		  Select Case button.Name
 		  Case "MattersButton"
 		    MessageBox("You selected  Matters")
+		    'Var mw As New DesktopWindow 
+		    'mw.Show(MattersWindow)
 		  Case "ClientsButton"
-		    MessageBox("You selected  Clients")
+		    'MessageBox("You selected  Clients")
+		    Var cw As New DesktopWindow 
+		    cw.Show(clientWIndow)
+		    
+		  Case "ArchivesButton"
+		    'MessageBox("You selected  Archives")
+		    Var am As New DesktopWindow 
+		    am.Show(ArchivedMattersWindow)
+		    
+		  Case "DocumentsButton"
+		    'MessageBox("You selected  Documents")
+		    Var dw As New DesktopWindow 
+		    dw.Show(DocumentsRegisterWindow)
+		    
 		  End Select
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
