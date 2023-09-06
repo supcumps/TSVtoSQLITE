@@ -64,8 +64,8 @@ Begin DesktopWindow MattersWindow
       AllowRowDragging=   False
       AllowRowReordering=   True
       Bold            =   False
-      ColumnCount     =   6
-      ColumnWidths    =   "10%,10%,*,15%, 15%"
+      ColumnCount     =   4
+      ColumnWidths    =   "10%,35%,40%,15%"
       DefaultRowHeight=   -1
       DropIndicatorVisible=   False
       Enabled         =   True
@@ -80,7 +80,7 @@ Begin DesktopWindow MattersWindow
       HeadingIndex    =   -1
       Height          =   459
       Index           =   -2147483648
-      InitialValue    =   "ID	Matter	Client	Status	Type	Date\n\n"
+      InitialValue    =   "Matter	Client	Type	Date\n\n"
       Italic          =   False
       Left            =   20
       LockBottom      =   True
@@ -131,7 +131,7 @@ Begin DesktopWindow MattersWindow
       Top             =   520
       Transparent     =   False
       Underline       =   False
-      Visible         =   True
+      Visible         =   False
       Width           =   106
    End
    Begin DesktopButton B_AddRow
@@ -162,7 +162,7 @@ Begin DesktopWindow MattersWindow
       Top             =   520
       Transparent     =   False
       Underline       =   False
-      Visible         =   True
+      Visible         =   False
       Width           =   106
    End
    Begin DesktopButton B_Save
@@ -193,7 +193,7 @@ Begin DesktopWindow MattersWindow
       Top             =   520
       Transparent     =   False
       Underline       =   False
-      Visible         =   True
+      Visible         =   False
       Width           =   80
    End
    Begin DesktopCanvas Canvas1
@@ -1091,7 +1091,7 @@ Begin DesktopWindow MattersWindow
       Height          =   20
       Index           =   -2147483648
       Italic          =   False
-      Left            =   629
+      Left            =   469
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -1103,7 +1103,7 @@ Begin DesktopWindow MattersWindow
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   22
+      Top             =   20
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -1121,7 +1121,7 @@ Begin DesktopWindow MattersWindow
       Hint            =   "Search on Matter Nº, Client, Status, Type "
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   20
+      Left            =   21
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -1143,6 +1143,99 @@ Begin DesktopWindow MattersWindow
       _mInitialParent =   ""
       _mName          =   ""
       _mPanelIndex    =   0
+   End
+   Begin DesktopButton DocumentRegister
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Document Register"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   610
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      TabIndex        =   15
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   20
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   148
+   End
+   Begin DesktopButton Matters
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Archived Matters"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   770
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      TabIndex        =   16
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   20
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   148
+   End
+   Begin DesktopButton B_FIles
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "🗄️ Files"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   930
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   17
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   20
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
    End
 End
 #tag EndDesktopWindow
@@ -1285,12 +1378,10 @@ End
 		  
 		  
 		  For Each row As DatabaseRow In rowsFound
-		    ListMembers.AddRow(row.Column("ID").StringValue,_
-		    row.Column("No").StringValue, _
+		    ListMembers.AddRow(row.Column("No").StringValue, _
 		    row.Column("Client").Stringvalue,_
-		    row.Column("Status").Stringvalue,_
 		    row.Column("Type").Stringvalue,_
-		    row.Column("InstructionDate").Stringvalue)
+		    row.Column("InstructionDate").Stringvalue) 
 		    'row.Column("Description").Stringvalue,_
 		    'row.Column("State").Stringvalue,_
 		    'row.Column("StaffResp").Stringvalue,_
@@ -1343,6 +1434,39 @@ End
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h21
+		Private Sub showFiles()
+		  
+		  Var f As  FolderItem
+		  'f = FolderItem.ShowSelectFolderDialog 
+		  
+		  
+		  // Check if a row is selected in the Listbox
+		  If ListMembers.SelectedRowIndex >= 0 Then
+		    'MessageBox(Me.CellTextAt(Me.SelectedRowIndex, 0))
+		    Var item As String = ListMembers.CellTextAt(ListMembers.SelectedRowIndex, 1) // the number of the matter
+		    Var name As String = ListMembers.CellTextAt(ListMembers.SelectedRowIndex, 2)
+		    'name = name.ReplaceAll( " ", "," )
+		    'item = item + "_" + name.LastField(",")
+		    
+		    //========================
+		    // need to be able to find the file by its number only
+		    //========================
+		    
+		    f  = SpecialFolder.Documents.child("LeapData").Child(item)
+		    
+		    If f <> Nil And f.Exists Then
+		      'messagebox("Locating " + name)
+		      f.launch
+		    Else
+		      MessageBox(f.NativePath + " Folder not found")
+		      f = FolderItem.ShowSelectFolderDialog 
+		    End If
+		    
+		  End If
+		End Sub
+	#tag EndMethod
+
 
 	#tag Note, Name = Improved code for window openeing event
 		change listbox to add relevent info
@@ -1371,34 +1495,8 @@ End
 	#tag Event
 		Sub DoublePressed()
 		  
-		  '
-		  Var f As  FolderItem
-		  'f = FolderItem.ShowSelectFolderDialog 
+		  showfiles()
 		  
-		  
-		  // Check if a row is selected in the Listbox
-		  If Me.SelectedRowIndex >= 0 Then
-		    'MessageBox(Me.CellTextAt(Me.SelectedRowIndex, 0))
-		    Var item As String = Me.CellTextAt(Me.SelectedRowIndex, 1) // the number of the matter
-		    Var name As String = Me.CellTextAt(Me.SelectedRowIndex, 2)
-		    'name = name.ReplaceAll( " ", "," )
-		    'item = item + "_" + name.LastField(",")
-		    
-		    //========================
-		    // need to be able to find the file by its number only
-		    //========================
-		    
-		    f  = SpecialFolder.Documents.child("LeapData").Child(item)
-		    
-		    If f <> Nil And f.Exists Then
-		      'messagebox("Locating " + name)
-		      f.launch
-		    Else
-		      MessageBox(f.NativePath + " Folder not found")
-		      f = FolderItem.ShowSelectFolderDialog 
-		    End If
-		    
-		  End If
 		  
 		  
 		  
@@ -1571,6 +1669,46 @@ End
 		  
 		  // clear the data entry fields
 		  clearEntryFields()
+		  
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events DocumentRegister
+	#tag Event
+		Sub Pressed()
+		  
+		  Var dw As New DesktopWindow 
+		  dw.Show(DocumentsRegisterWindow)
+		  
+		  
+		  
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events Matters
+	#tag Event
+		Sub Pressed()
+		  
+		  Var am As New DesktopWindow 
+		  am.Show(ArchivedMattersWindow)
+		  
+		  
+		  
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events B_FIles
+	#tag Event
+		Sub Pressed()
+		  showfiles()
+		  
+		  
 		  
 		  
 		  

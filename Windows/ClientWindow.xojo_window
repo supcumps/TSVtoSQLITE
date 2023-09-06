@@ -24,41 +24,6 @@ Begin DesktopWindow ClientWindow
    Type            =   0
    Visible         =   True
    Width           =   1034
-   Begin DesktopSearchField SearchClients
-      Active          =   False
-      AllowAutoDeactivate=   True
-      AllowFocusRing  =   True
-      AllowRecentItems=   False
-      AllowTabStop    =   True
-      ClearMenuItemValue=   "Clear"
-      Enabled         =   True
-      Height          =   22
-      Hint            =   ""
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MaximumRecentItems=   -1
-      PanelIndex      =   0
-      RecentItemsValue=   "Recent Searches"
-      Scope           =   2
-      TabIndex        =   0
-      TabPanelIndex   =   0
-      Text            =   ""
-      Tooltip         =   ""
-      Top             =   20
-      Transparent     =   False
-      Visible         =   True
-      Width           =   300
-      _mIndex         =   0
-      _mInitialParent =   ""
-      _mName          =   ""
-      _mPanelIndex    =   0
-   End
    Begin DesktopListBox listMembers
       AllowAutoDeactivate=   True
       AllowAutoHideScrollbars=   True
@@ -120,7 +85,7 @@ Begin DesktopWindow ClientWindow
       Height          =   20
       Index           =   -2147483648
       Italic          =   False
-      Left            =   856
+      Left            =   934
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -137,37 +102,6 @@ Begin DesktopWindow ClientWindow
       Underline       =   False
       Visible         =   True
       Width           =   80
-   End
-   Begin DesktopButton DetailsButton
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Cancel          =   False
-      Caption         =   "Client Details"
-      Default         =   False
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   -2147483648
-      Italic          =   False
-      Left            =   523
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MacButtonStyle  =   0
-      Scope           =   0
-      TabIndex        =   4
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   446
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   111
    End
    Begin DesktopGroupBox GroupBox1
       AllowAutoDeactivate=   True
@@ -2008,7 +1942,7 @@ Begin DesktopWindow ClientWindow
       Top             =   446
       Transparent     =   False
       Underline       =   False
-      Visible         =   True
+      Visible         =   False
       Width           =   80
    End
    Begin DesktopButton SaveButton
@@ -2039,8 +1973,43 @@ Begin DesktopWindow ClientWindow
       Top             =   446
       Transparent     =   False
       Underline       =   False
-      Visible         =   True
+      Visible         =   False
       Width           =   80
+   End
+   Begin DesktopSearchField SearchClients
+      Active          =   False
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowRecentItems=   False
+      AllowTabStop    =   True
+      ClearMenuItemValue=   "Clear"
+      Enabled         =   True
+      Height          =   22
+      Hint            =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MaximumRecentItems=   -1
+      PanelIndex      =   0
+      RecentItemsValue=   "Recent Searches"
+      Scope           =   2
+      TabIndex        =   8
+      TabPanelIndex   =   0
+      Text            =   ""
+      Tooltip         =   ""
+      Top             =   20
+      Transparent     =   False
+      Visible         =   True
+      Width           =   300
+      _mIndex         =   0
+      _mInitialParent =   ""
+      _mName          =   ""
+      _mPanelIndex    =   0
    End
 End
 #tag EndDesktopWindow
@@ -2116,13 +2085,6 @@ End
 
 #tag EndWindowCode
 
-#tag Events SearchClients
-	#tag Event
-		Sub TextChanged()
-		  SearchForClients()
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events listMembers
 	#tag Event
 		Sub SelectionChanged()
@@ -2207,37 +2169,6 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events DetailsButton
-	#tag Event
-		Sub Pressed()
-		  'Var CurrentRow As rowset
-		  
-		  
-		  If listMembers.SelectedRowCount = 1 Then
-		    
-		    
-		    Try
-		      
-		      Var ID As String = listMembers.RowTagAt(listMembers.SelectedRowIndex)
-		      CurrentRow = db.SelectSQL("SELECT * FROM Client WHERE ID = ?", ID) 
-		      
-		      'matterNumber.Text = CurrentRow.Column("No").StringValue
-		      Var w As New ClientDetailsWindow
-		      w.FIllData(CurrentRow)
-		      w.show
-		      
-		    Catch error As DatabaseException
-		      MessageBox ("The client details could not be loaded due to an error.")
-		    End Try
-		  Else
-		    'activateCanvasAndButtons(False)
-		    'clearEntryFields()
-		    currentRow = Nil // no row selected
-		  End If
-		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events SaveButton
 	#tag Event
 		Sub Pressed()
@@ -2306,6 +2237,13 @@ End
 		  
 		  'resetSearch()
 		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events SearchClients
+	#tag Event
+		Sub TextChanged()
+		  SearchForClients()
 		End Sub
 	#tag EndEvent
 #tag EndEvents

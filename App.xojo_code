@@ -51,6 +51,9 @@ Inherits DesktopApplication
 		      f = SpecialFolder.Documents.Child("LeapData").Child("DocumentRegister.tsv")
 		      makeDatabaseTable(f,"Documents")
 		      
+		      f = SpecialFolder.Documents.Child("LeapData").Child("ArchivedMatters.tsv")
+		      makeDatabaseTable(f,"Archives")
+		      
 		    Catch error As DatabaseException
 		      MessageBox("Unable to create table " + error.message)
 		    End Try
@@ -66,6 +69,16 @@ Inherits DesktopApplication
 		End Sub
 	#tag EndEvent
 
+
+	#tag MenuHandler
+		Function Matters() As Boolean Handles Matters.Action
+		  
+		  Var mw As New DesktopWindow 
+		  mw.Show(mattersWIndow)
+		  Return True
+		  
+		End Function
+	#tag EndMenuHandler
 
 	#tag MenuHandler
 		Function WindowMainWIndow() As Boolean Handles WindowMainWIndow.Action
@@ -176,7 +189,7 @@ Inherits DesktopApplication
 		    ///  db.ExecuteSQL("INSERT INTO team (Name, Coach) VALUES ('Penguins', 'Coach Mike')")
 		    sql = "INSERT INTO "+ dbTable  + "("+ headings + ") VALUES ("
 		    
-		    columns = records(x)
+		    columns = records(x) ///
 		    // remove any addiitonal apostrophe's
 		    columns = columns.ReplaceAll("'","")
 		    
