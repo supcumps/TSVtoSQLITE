@@ -20,7 +20,7 @@ Begin DesktopWindow LeapDataWindow
    MinimumHeight   =   64
    MinimumWidth    =   64
    Resizeable      =   True
-   Title           =   "Leap Data"
+   Title           =   "Ciooroy Legal Centre Leap Data"
    Type            =   0
    Visible         =   True
    Width           =   600
@@ -31,6 +31,29 @@ Begin DesktopWindow LeapDataWindow
       Scope           =   2
       TabPanelIndex   =   0
       Visible         =   True
+   End
+   Begin DesktopImageViewer ImageViewer1
+      AllowAutoDeactivate=   True
+      AllowTabStop    =   True
+      Enabled         =   True
+      Height          =   206
+      Image           =   1575589887
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   200
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   0
+      TabPanelIndex   =   0
+      Tooltip         =   ""
+      Top             =   97
+      Transparent     =   False
+      Visible         =   True
+      Width           =   201
    End
 End
 #tag EndDesktopWindow
@@ -62,6 +85,10 @@ End
 		    'MessageBox("You selected  Documents")
 		    Var dw As New DesktopWindow 
 		    dw.Show(DocumentsRegisterWindow)
+		    
+		  Case "QuitButton"
+		    'MessageBox("You selected  Documents")
+		    self.close
 		    
 		  End Select
 		  

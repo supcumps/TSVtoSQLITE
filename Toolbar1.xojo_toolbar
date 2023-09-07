@@ -5,7 +5,7 @@ Inherits DesktopToolbar
 		Caption = "Matters"
 		Tooltip = ""
 		ButtonStyle = 0
-		Icon = 68685823
+		Icon = 443754495
 	End
 	Begin DesktopToolbarButton ToolItem5
 		Caption = "Untitled"
@@ -16,7 +16,7 @@ Inherits DesktopToolbar
 		Caption = "Clients"
 		Tooltip = ""
 		ButtonStyle = 0
-		Icon = 1586585599
+		Icon = 1780621311
 	End
 	Begin DesktopToolbarButton ToolItem6
 		Caption = "Untitled"
@@ -27,13 +27,19 @@ Inherits DesktopToolbar
 		Caption = "Archived Matters"
 		Tooltip = ""
 		ButtonStyle = 0
-		Icon = 1537775615
+		Icon = 990990335
 	End
 	Begin DesktopToolbarButton DocumentsButton
 		Caption = "Documents Register"
 		Tooltip = ""
 		ButtonStyle = 0
-		Icon = 279578623
+		Icon = 458731519
+	End
+	Begin DesktopToolbarButton QuitButton
+		Caption = "Quit"
+		Tooltip = ""
+		ButtonStyle = 0
+		Icon = 1817327615
 	End
 End
 #tag EndDesktopToolbar
