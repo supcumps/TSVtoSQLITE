@@ -1,0 +1,9 @@
+#tag ColorGroup
+	CodeName=ScreenColour
+	#tag Color
+		Type=1
+		Platform=1
+		Light=FFFFFF00
+		Dark=FFFEFE27
+	#tag EndColor
+#tag EndColorGroup

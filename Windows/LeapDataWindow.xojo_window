@@ -1,7 +1,7 @@
 #tag DesktopWindow
 Begin DesktopWindow LeapDataWindow
    Backdrop        =   0
-   BackgroundColor =   &cFFFFFF
+   BackgroundColor =   ScreenColour
    Composite       =   False
    DefaultLocation =   2
    FullScreen      =   False

@@ -5,6 +5,7 @@ OrigIDEVersion=20230200
 DesktopToolbar=Toolbar1;Toolbar1.xojo_toolbar;&h0000000044EF57FF;&h0000000000000000;false
 Class=App;App.xojo_code;&h00000000777C3FFF;&h0000000000000000;false
 Folder=Windows;Windows;&h000000000E4627FF;&h0000000000000000;false
+ColorAsset=ScreenColour;Windows/ScreenColour.xojo_color;&h00000000537B9FFF;&h000000000E4627FF;false
 DesktopWindow=ArchivedMattersWindow;Windows/ArchivedMattersWindow.xojo_window;&h000000005ACB17FF;&h000000000E4627FF;false
 DesktopWindow=DocumentsRegisterWindow;Windows/DocumentsRegisterWindow.xojo_window;&h0000000032449FFF;&h000000000E4627FF;false
 DesktopWindow=ClientWindow;Windows/ClientWindow.xojo_window;&h00000000792BDFFF;&h000000000E4627FF;false
