@@ -5,12 +5,12 @@ Begin DesktopWindow LeapDataWindow
    Composite       =   False
    DefaultLocation =   2
    FullScreen      =   False
-   HasBackgroundColor=   False
+   HasBackgroundColor=   True
    HasCloseButton  =   True
    HasFullScreenButton=   False
    HasMaximizeButton=   True
    HasMinimizeButton=   True
-   Height          =   434
+   Height          =   516
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -23,21 +23,13 @@ Begin DesktopWindow LeapDataWindow
    Title           =   "Cooroy Legal Centre Leap Data"
    Type            =   0
    Visible         =   True
-   Width           =   768
-   Begin Toolbar1 Toolbar11
-      Enabled         =   True
-      Index           =   -2147483648
-      LockedInPosition=   False
-      Scope           =   2
-      TabPanelIndex   =   0
-      Visible         =   True
-   End
+   Width           =   792
    Begin DesktopImageViewer ImageViewer1
       Active          =   False
       AllowAutoDeactivate=   True
       AllowTabStop    =   True
       Enabled         =   True
-      Height          =   347
+      Height          =   426
       Image           =   1212555263
       Index           =   -2147483648
       InitialParent   =   ""
@@ -52,14 +44,55 @@ Begin DesktopWindow LeapDataWindow
       TabIndex        =   0
       TabPanelIndex   =   0
       Tooltip         =   ""
-      Top             =   47
+      Top             =   79
       Transparent     =   False
       Visible         =   True
-      Width           =   709
+      Width           =   733
       _mIndex         =   0
       _mInitialParent =   ""
       _mName          =   ""
       _mPanelIndex    =   0
+   End
+   Begin TBCanvas TBCanvas1
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   True
+      AllowTabs       =   False
+      Backdrop        =   0
+      Bold            =   False
+      ButtonType      =   0
+      DisplayType     =   0
+      DoubleBuffer    =   False
+      DrawFrame       =   True
+      enableCustomize =   True
+      Enabled         =   True
+      enableDrag      =   True
+      enableScroll    =   False
+      Height          =   57
+      Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   -1
+      Italic          =   False
+      Left            =   29
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      SelectedColor   =   &c3399FF00
+      SelectedColor2  =   &c00000000
+      TabIndex        =   1
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0
+      Tooltip         =   ""
+      Top             =   20
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   733
    End
 End
 #tag EndDesktopWindow
@@ -67,12 +100,27 @@ End
 #tag WindowCode
 #tag EndWindowCode
 
-#tag Events Toolbar11
+#tag Events TBCanvas1
 	#tag Event
-		Sub Pressed(item As DesktopToolbarItem)
-		  Var button As DesktopToolbaritem = item
+		Sub Open()
 		  
-		  Select Case button.Name
+		  
+		  
+		  //Defining text to show
+		  Me.CreateButton  "Matters", "MattersButton", "Files helptag", matters_icon_1024x1024,matters_icon_1024x1024, True, True
+		  Me.createbutton "Clients","ClientsButton",  "",client_icon_1024x1024, client_icon_1024x1024, True, True
+		  Me.createbutton "Archives","ArchivesButton", "",Archive_1024x1024, Archive_1024x1024, True, True
+		  Me.createbutton "Documents Register", "DocumentsButton", "",Document_icon_1024x1024, Document_icon_1024x1024, True, True
+		  Me.createbutton "Quit", "QuitButton", "",Quit_icon_1024x1024, Quit_icon_1024x1024, True, True
+		  
+		  //Making the first button selected
+		  Me.InitialValue=0
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Action(ButtonName As String)
+		  
+		  Select Case buttonName
 		  Case "MattersButton"
 		    'MessageBox("You selected  Matters")
 		    Var mw As New DesktopWindow 
@@ -94,11 +142,20 @@ End
 		    
 		  Case "QuitButton"
 		    'MessageBox("You selected  Documents")
-		    self.close
+		    Self.close
 		    
 		  End Select
-		  
 		End Sub
+	#tag EndEvent
+	#tag Event
+		Function DrawBackground(g As Graphics) As Boolean
+		  //This is where you can draw in the background of the control
+		  
+		  g.ForeColor = &cF3F4D6
+		  g.FillRect(0, 0, g.Width, g.Height)
+		  
+		  Return True
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior

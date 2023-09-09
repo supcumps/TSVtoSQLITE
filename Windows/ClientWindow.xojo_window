@@ -1,7 +1,7 @@
 #tag DesktopWindow
 Begin DesktopWindow ClientWindow
    Backdrop        =   0
-   BackgroundColor =   &cF3F4D600
+   BackgroundColor =   ScreenColour
    Composite       =   False
    DefaultLocation =   2
    FullScreen      =   False

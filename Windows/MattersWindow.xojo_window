@@ -1,7 +1,7 @@
 #tag DesktopWindow
 Begin DesktopWindow MattersWindow
    Backdrop        =   0
-   BackgroundColor =   &cF3F4D600
+   BackgroundColor =   ScreenColour
    Composite       =   False
    DefaultLocation =   2
    FullScreen      =   False
@@ -1401,7 +1401,6 @@ End
 #tag Events ListMembers
 	#tag Event
 		Sub DoublePressed()
-		  
 		  showfiles()
 		  
 		  

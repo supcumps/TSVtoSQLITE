@@ -1,11 +1,11 @@
 #tag DesktopWindow
 Begin DesktopWindow DocumentsRegisterWindow
    Backdrop        =   0
-   BackgroundColor =   &cF3F4D600
+   BackgroundColor =   ScreenColour
    Composite       =   False
    DefaultLocation =   2
    FullScreen      =   False
-   HasBackgroundColor=   False
+   HasBackgroundColor=   True
    HasCloseButton  =   True
    HasFullScreenButton=   False
    HasMaximizeButton=   True
