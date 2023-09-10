@@ -60,6 +60,7 @@ Begin DesktopWindow LeapDataWindow
       AllowTabs       =   False
       Backdrop        =   0
       Bold            =   False
+      Border          =   False
       ButtonType      =   0
       DisplayType     =   0
       DoubleBuffer    =   False
@@ -68,6 +69,7 @@ Begin DesktopWindow LeapDataWindow
       Enabled         =   True
       enableDrag      =   True
       enableScroll    =   False
+      ForceVertical   =   False
       Height          =   57
       Index           =   -2147483648
       InitialParent   =   ""
@@ -79,6 +81,9 @@ Begin DesktopWindow LeapDataWindow
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
+      minHeight       =   0
+      minWidth        =   0
+      redrawTime      =   0.0
       Scope           =   2
       SelectedColor   =   &c3399FF00
       SelectedColor2  =   &c00000000
@@ -151,7 +156,7 @@ End
 		Function DrawBackground(g As Graphics) As Boolean
 		  //This is where you can draw in the background of the control
 		  
-		  g.ForeColor = &cF3F4D6
+		  g.ForeColor = Screencolour '&c96EB99
 		  g.FillRect(0, 0, g.Width, g.Height)
 		  
 		  Return True

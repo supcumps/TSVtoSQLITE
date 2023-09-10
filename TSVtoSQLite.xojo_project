@@ -30,6 +30,7 @@ MultiImage=Quit_icon_1024x1024;Quit_icon_1024x1024.xojo_image;&h000000006C5237FF
 MultiImage=CLC;CLC.xojo_image;&h0000000048461FFF;&h0000000000000000;false
 MultiImage=macOS_icon_1024x1024;macOS_icon_1024x1024.xojo_image;&h000000005DC427FF;&h0000000000000000;false
 ColorAsset=ScreenColour1;ScreenColour1.xojo_color;&h000000007F6A8FFF;&h0000000000000000;false
+ColorAsset=ColorGroup1;ColorGroup1.xojo_color;&h000000006672BFFF;&h0000000000000000;false
 AppMenuBar=MainMenuBar
 MajorVersion=1
 MinorVersion=1

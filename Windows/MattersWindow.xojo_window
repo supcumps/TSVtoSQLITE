@@ -1343,7 +1343,6 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub showFiles()
-		  
 		  Var f As  FolderItem
 		  'f = FolderItem.ShowSelectFolderDialog 
 		  
@@ -1351,8 +1350,8 @@ End
 		  // Check if a row is selected in the Listbox
 		  If ListMembers.SelectedRowIndex >= 0 Then
 		    'MessageBox(Me.CellTextAt(Me.SelectedRowIndex, 0))
-		    Var item As String = ListMembers.CellTextAt(ListMembers.SelectedRowIndex, 1) // the number of the matter
-		    Var name As String = ListMembers.CellTextAt(ListMembers.SelectedRowIndex, 2)
+		    Var item As String = ListMembers.CellTextAt(ListMembers.SelectedRowIndex, 0) // the number of the matter
+		    Var name As String = ListMembers.CellTextAt(ListMembers.SelectedRowIndex, 1)
 		    'name = name.ReplaceAll( " ", "," )
 		    'item = item + "_" + name.LastField(",")
 		    
@@ -1369,8 +1368,11 @@ End
 		      MessageBox(f.NativePath + " Folder not found")
 		      f = FolderItem.ShowSelectFolderDialog 
 		    End If
+		  Else
+		    messagebox("Please selct a matter before searching for related files")
 		    
 		  End If
+		  
 		End Sub
 	#tag EndMethod
 
@@ -1570,36 +1572,10 @@ End
 #tag Events B_FIles
 	#tag Event
 		Sub Pressed()
-		  'showfiles()
+		  
+		  showfiles()
 		  
 		  
-		  Var f As  FolderItem
-		  'f = FolderItem.ShowSelectFolderDialog 
-		  
-		  
-		  // Check if a row is selected in the Listbox
-		  If ListMembers.SelectedRowIndex >= 0 Then
-		    'MessageBox(Me.CellTextAt(Me.SelectedRowIndex, 0))
-		    Var item As String = ListMembers.CellTextAt(ListMembers.SelectedRowIndex, 0) // the number of the matter
-		    Var name As String = ListMembers.CellTextAt(ListMembers.SelectedRowIndex, 1)
-		    'name = name.ReplaceAll( " ", "," )
-		    'item = item + "_" + name.LastField(",")
-		    
-		    //========================
-		    // need to be able to find the file by its number only
-		    //========================
-		    
-		    f  = SpecialFolder.Documents.child("LeapData").Child(item)
-		    
-		    If f <> Nil And f.Exists Then
-		      'messagebox("Locating " + name)
-		      f.launch
-		    Else
-		      MessageBox(f.NativePath + " Folder not found")
-		      f = FolderItem.ShowSelectFolderDialog 
-		    End If
-		    
-		  End If
 		  
 		  
 		  
